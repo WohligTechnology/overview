@@ -1,0 +1,191 @@
+$activityBG: #fdebea;
+$aspects: #f78963;
+$tests: #1a9ae4;
+$competitions: #eae327;
+$keyCompetitions: #d6bd19;
+$restDay: #c1271c;
+$highBG: #fee7cc;
+$highColor: #784912;
+$lowBG: #f3ffe9;
+$lowColor: #396316;
+$mediumBG: #fffdea;
+$mediumColor: #887f27;
+$phaseOdd: #0da183;
+$phaseEven: #14a7ac;
+.key {
+    font-size: 12px;
+    color: white;
+    +.key {
+        margin-top: 3px;
+    }
+}
+
+.key1 {
+    @include background-image(linear-gradient(left, $phaseOdd 0%, $phaseOdd 50%, $phaseEven 100%));
+}
+
+.key2 {
+    background-color: $aspects;
+}
+
+.key3 {
+    @include display(flex);
+    overflow: hidden;
+    span {
+        @include flex(1);
+        background-color: $competitions;
+        +span {
+            background-color: $keyCompetitions;
+        }
+    }
+}
+
+.key7 {
+    @include display(flex);
+    overflow: hidden;
+    span {
+        @include flex(1);
+        color: black;
+    }
+}
+
+.key4 {
+    background-color: $tests;
+}
+
+.key5 {
+    background-color: $activityBG;
+    color: black;
+}
+
+.training-activity {
+    color: black !important;
+    background-color: $activityBG;
+    border-color: $activityBG;
+    font-weight: bold;
+    &.rest-day {
+        color: $restDay !important;
+    }
+}
+
+.phaseOdd {
+    background-color: $phaseOdd !important;
+    border-color: $phaseOdd;
+    font-weight: bold;
+}
+
+.phaseEven {
+    background-color: $phaseEven !important;
+    border-color: $phaseEven;
+    font-weight: bold;
+}
+
+.tests {
+    background-color: $tests;
+    border-color: $tests;
+}
+
+.competitions {
+    background-color: $competitions;
+    border-color: $competitions;
+}
+
+.keyCompetitions {
+    background-color: $keyCompetitions;
+    border-color: $keyCompetitions;
+}
+
+.aspects {
+    background-color: $aspects;
+    border-color: $aspects;
+}
+
+.activity-desc {
+    background-color: transparent;
+    color: black !important;
+    border-color: transparent;
+    height: 230px;
+    overflow: auto;
+    border-bottom: 2px solid #ddd;
+    .fc-content {
+        white-space: normal;
+        font-size: 11px;
+        line-height: 180%;
+    }
+}
+
+.intLow {
+    background-color: $lowBG;
+    color: $lowColor !important;
+    border-color: $lowBG;
+    font-weight: bold;
+}
+
+.intMid {
+    background-color: $mediumBG;
+    color: $mediumColor !important;
+    border-color: $mediumBG;
+    font-weight: bold;
+}
+
+.intHigh {
+    background-color: $highBG;
+    color: $highColor !important;
+    border-color: $highBG;
+    font-weight: bold;
+}
+
+.volume,
+.notes,
+.downlo {
+    background-color: #ddd;
+    border-color: #ddd;
+    color: black !important;
+}
+
+.notes,
+.downlo {
+    font-family: 'linearicons';
+}
+
+.phase-repeater {
+    position: relative;
+}
+
+.phase-title {
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.seven-act {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.act-repeater {
+    width: 14.28%;
+    overflow: hidden;
+    float: left;
+    margin: 20px 0 0;
+    text-align: center;
+    line-height: 20px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.no-act {
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.hidden-act {
+    opacity: 0;
+}

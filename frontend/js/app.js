@@ -18,11 +18,19 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "frontend/views/template.html",
             controller: 'HomeCtrl'
         })
-        .state('form', {
-            url: "/form",
+        // .state('form', {
+        //     url: "/form",
+        //     templateUrl: "frontend/views/template.html",
+        //     controller: 'FormCtrl'
+        // })
+        
+        .state('state-info', {
+            url: "/state-info",
             templateUrl: "frontend/views/template.html",
-            controller: 'FormCtrl'
-        });
+            controller: 'StateInfoCtrl'
+        })
+        ;
+
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
 });
@@ -85,6 +93,24 @@ firstapp.directive('autoHeight', function ($compile, $parse) {
         }
     };
 });
+
+firstapp.directive('menuOptions', function ($document) {
+    return {
+        restrict: 'C',
+        replace: false,
+        link: function (scope, element, attr) {
+            var $element = $(element);
+            $(element).on("click", function () {
+                $(".side-header.opened-menu").toggleClass('slide-menu');
+                $(".main-content").toggleClass('wide-content');
+                $("footer").toggleClass('wide-footer');
+                $(".menu-options").toggleClass('active');
+            });
+
+        }
+    };
+});
+
 
 firstapp.config(function ($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);

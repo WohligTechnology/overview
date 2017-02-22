@@ -5,7 +5,9 @@ module.exports = [
   'bower_components/flexslider/jquery.flexslider-min.js',
   'bower_components/fancyBox/source/jquery.fancybox.js',
   'bower_components/smart-app-banner/smart-app-banner.js',
-
+  'bower_components/highcharts/highcharts.js',
+  'bower_components/highcharts/highmaps.js',
+  'bower_components/highcharts/modules/exporting.js',
   //Angular Libs
   'bower_components/angular/angular.js',
   'bower_components/angular-sanitize/angular-sanitize.js',
@@ -19,6 +21,7 @@ module.exports = [
   'bower_components/angulartics/dist/angulartics.min.js',
   'bower_components/angulartics-google-analytics/dist/angulartics-ga.min.js',
   'bower_components/angular-ui-swiper/dist/angular-ui-swiper.js',
+  'bower_components/highcharts-ng/dist/highcharts-ng.js',
 
   //Work files
   'frontend/js/app.js',

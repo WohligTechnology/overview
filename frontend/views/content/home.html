@@ -1,31 +1,99 @@
-<div class="container">
-
-    <flex-slider flex-slide="s in mySlides" prev-text="" next-text="">
-        <li>
-            <img ng-src="{{s}}" class="img-full">
-        </li>
-    </flex-slider>
-
-    <swiper autoplay="5000" effect="slide" slides-per-view="1" loop="true">
-        <slides>
-            <slide ng-repeat="s in mySlides">
-                <img ng-src="{{s}}" class="img-full" noloading="true">
-            </slide>
-        </slides>
-        <prev></prev>
-        <next></next>
-        <pagination></pagination>
-    </swiper>
-
-    <div class="row">
-        <div class="col-md-2" ng-repeat="s in mySlides">
-            <a ng-href="{{s}}" rel="gal" fancybox>
-                <img ng-src="{{s}}" class="img-full">
-            </a>
+<div class="overview">
+    <div class="container-fluid">
+        <div class="heading-profile">
+            <h2>Overview</h2>
         </div>
-        <div class="col-md-2">
-            <a class="various fancybox.iframe" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1" fancybox><img ng-src="http://img.youtube.com/vi/L9szn1QQfas/maxresdefault.jpg" class="img-full"></a>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="map-chart text-center">
+                    <img src="frontend/img/country.jpg" alt="" class="">
+                    <!--<highchart id="chart2" config="chartMap"></highchart>-->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box-info">
+                    <div class="box-5 jumbotron">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Top 5 States</th>
+                                    <th>Out of 30</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mahasratra</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td>Gujrat</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>Karnataka</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td>Tamilnadu</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>Andrapradesh</td>
+                                    <td>22</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="line-chart bg-white">
+                    <div class="button-group pull-right">
+                        <button class="btn btn-primary">Top 5</button>
+                        <button class="btn btn-primary">Bottom 5</button>
+                        <button class="btn btn-primary">Custom 5</button>
+                    </div>
+                    <highchart id="chart1" config="chartConfig"></highchart>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box-info">
+                    <div class="box-5 jumbotron">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Bottom 5 States</th>
+                                    <th>Out of 30</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Delhi</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Madhyapradesh</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Meghala</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>Assam</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>Tripura</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
