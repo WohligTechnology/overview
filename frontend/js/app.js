@@ -18,18 +18,12 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "frontend/views/template.html",
             controller: 'HomeCtrl'
         })
-        // .state('form', {
-        //     url: "/form",
-        //     templateUrl: "frontend/views/template.html",
-        //     controller: 'FormCtrl'
-        // })
-        
+
         .state('state-info', {
             url: "/state-info",
             templateUrl: "frontend/views/template.html",
             controller: 'StateInfoCtrl'
-        })
-        ;
+        });
 
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
@@ -81,6 +75,27 @@ firstapp.directive('fancybox', function ($document) {
         }
     };
 });
+
+firstapp.directive('hideOnScroll', function ($document) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function (scope, element, attr) {
+            var $element = $(element);
+            var lastScrollTop = 0;
+            $(window).scroll(function (event) {
+                var st = $(this).scrollTop();
+                if (st > lastScrollTop) {
+                    $(element).addClass('nav-up');
+                } else {
+                    $(element).removeClass('nav-up');
+                }
+                lastScrollTop = st;
+            });
+        }
+    };
+});
+
 
 firstapp.directive('autoHeight', function ($compile, $parse) {
     return {

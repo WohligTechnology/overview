@@ -1,99 +1,110 @@
-<div class="overview">
-    <div class="container-fluid">
-        <div class="heading-profile">
-            <h2>Overview</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="map-chart text-center">
-                    <img src="frontend/img/country.jpg" alt="" class="">
-                    <!--<highchart id="chart2" config="chartMap"></highchart>-->
+<div class="heading-sec">
+    <div class="heading-profile">
+        <h2>Overview</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="widget">
+            <div class="activity-sec">
+                <div class="widget-title">
+                    <h3>Map</h3>
+                    <span>Click on a country</span>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box-info">
-                    <div class="box-5 jumbotron">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>Top 5 States</th>
-                                    <th>Out of 30</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Mahasratra</td>
-                                    <td>29</td>
-                                </tr>
-                                <tr>
-                                    <td>Gujrat</td>
-                                    <td>27</td>
-                                </tr>
-                                <tr>
-                                    <td>Karnataka</td>
-                                    <td>26</td>
-                                </tr>
-                                <tr>
-                                    <td>Tamilnadu</td>
-                                    <td>25</td>
-                                </tr>
-                                <tr>
-                                    <td>Andrapradesh</td>
-                                    <td>22</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="map-viewer">
+                    <highchart id="map" class="map-viewer" map="mapConfig.series.mapdata" config="mapConfig"></highchart>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="line-chart bg-white">
+    </div>
+    <div class="col-md-4">
+        <div class="widget">
+            <div class="activity-sec">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Top 5 States</th>
+                            <th>Out of 30</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mahasratra</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>Gujrat</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>Karnataka</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>Tamilnadu</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Andrapradesh</td>
+                            <td>22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="activity-sec">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bottom 5 States</th>
+                            <th>Out of 30</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Delhi</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Madhyapradesh</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Meghala</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Assam</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Tripura</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="activity-sec">
+                <div class="widget-title">
                     <div class="button-group pull-right">
                         <button class="btn btn-primary">Top 5</button>
                         <button class="btn btn-primary">Bottom 5</button>
                         <button class="btn btn-primary">Custom 5</button>
                     </div>
-                    <highchart id="chart1" config="chartConfig"></highchart>
+                    <h3>Comparison Graph</h3>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box-info">
-                    <div class="box-5 jumbotron">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>Bottom 5 States</th>
-                                    <th>Out of 30</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Delhi</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>Madhyapradesh</td>
-                                    <td>8</td>
-                                </tr>
-                                <tr>
-                                    <td>Meghala</td>
-                                    <td>6</td>
-                                </tr>
-                                <tr>
-                                    <td>Assam</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>Tripura</td>
-                                    <td>4</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <highchart id="overview-graph" config="graphConfig"></highchart>
+
             </div>
         </div>
+
     </div>
 </div>

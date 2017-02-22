@@ -1,4 +1,4 @@
-$output-bourbon-deprecation-warnings: true;
+$output-bourbon-deprecation-warnings: false;
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
@@ -4696,6 +4696,28 @@ button.btn.btn-primary.btn-outline {
             background: $brand-primary;
         }
     }
+}
+
+.top-bar {
+    @include transition(all 300ms ease);
+}
+
+.nav-up {
+    @include transform(translateY(-100%));
+}
+
+.map-viewer {
+    height: 500px;
+    min-width: 300px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.meter-viewer {
+    min-width: 200px;
+    max-width: 280px;
+    height: 300px;
+    margin: 0 auto;
 }
 
 @import "training-plan";
