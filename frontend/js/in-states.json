@@ -1,0 +1,149 @@
+[{
+        "name": "Andhra Pradesh",
+        "key": "AP"
+    },
+    {
+        "name": "Arunachal Pradesh",
+        "key": "AR"
+    },
+    {
+        "name": "Assam",
+        "key": "AS"
+    },
+    {
+        "name": "Bihar",
+        "key": "BR"
+    },
+    {
+        "name": "Chhattisgarh",
+        "key": "CG"
+    },
+    {
+        "name": "Goa",
+        "key": "GA"
+    },
+    {
+        "name": "Gujarat",
+        "key": "GJ"
+    },
+    {
+        "name": "Haryana",
+        "key": "HR"
+    },
+    {
+        "name": "Himachal Pradesh",
+        "key": "HP"
+    },
+    {
+        "name": "Jammu and Kashmir",
+        "key": "JK"
+    },
+    {
+        "name": "Jharkhand",
+        "key": "JH"
+    },
+    {
+        "name": "Karnataka",
+        "key": "KA"
+    },
+    {
+        "name": "Kerala",
+        "key": "KL"
+    },
+    {
+        "name": "Madhya Pradesh",
+        "key": "MP"
+    },
+    {
+        "name": "Maharashtra",
+        "key": "MH"
+    },
+    {
+        "name": "Manipur",
+        "key": "MN"
+    },
+    {
+        "name": "Meghalaya",
+        "key": "ML"
+    },
+    {
+        "name": "Mizoram",
+        "key": "MZ"
+    },
+    {
+        "name": "Nagaland",
+        "key": "NL"
+    },
+    {
+        "name": "Orissa",
+        "key": "OR"
+    },
+    {
+        "name": "Punjab",
+        "key": "PB"
+    },
+    {
+        "name": "Rajasthan",
+        "key": "RJ"
+    },
+    {
+        "name": "Sikkim",
+        "key": "SK"
+    },
+    {
+        "name": "Tamil Nadu",
+        "key": "TN"
+    },
+    {
+        "name": "Tripura",
+        "key": "TR"
+    },
+    {
+        "name": "Uttarakhand",
+        "key": "UK"
+    },
+    {
+        "name": "Uttar Pradesh",
+        "key": "UP"
+    },
+    {
+        "name": "West Bengal",
+        "key": "WB"
+    },
+    {
+        "name": "Tamil Nadu",
+        "key": "TN"
+    },
+    {
+        "name": "Tripura",
+        "key": "TR"
+    },
+    {
+        "name": "Andaman and Nicobar Islands",
+        "key": "AN"
+    },
+    {
+        "name": "Chandigarh",
+        "key": "CH"
+    },
+    {
+        "name": "Dadra and Nagar Haveli",
+        "key": "DH"
+    },
+    {
+        "name": "Daman and Diu",
+        "key": "DD"
+    },
+    {
+        "name": "Delhi",
+        "key": "DL"
+    },
+    {
+        "name": "Lakshadweep",
+        "key": "LD"
+    },
+    {
+        "name": "Pondicherry",
+        "key": "PY"
+    }
+]
