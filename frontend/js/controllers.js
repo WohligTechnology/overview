@@ -296,46 +296,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "name": "West Bengal",
                 "key": "WB",
                 "score": "24"
-            },
-            {
-                "name": "Tamil Nadu",
-                "key": "TN",
-                "score": "23"
-            },
-            {
-                "name": "Andaman and Nicobar Islands",
-                "key": "AN",
-                "score": "23"
-            },
-            {
-                "name": "Chandigarh",
-                "key": "CH",
-                "score": "24"
-            },
-            {
-                "name": "Dadra and Nagar Haveli",
-                "key": "DH",
-                "score": "26"
-            },
-            {
-                "name": "Daman and Diu",
-                "key": "DD",
-                "score": "24"
-            },
-            {
-                "name": "Delhi",
-                "key": "DL",
-                "score": "20"
-            },
-            {
-                "name": "Lakshadweep",
-                "key": "LD",
-                "score": "16"
-            },
-            {
-                "name": "Pondicherry",
-                "key": "PY",
-                "score": "26"
             }
         ];
 
