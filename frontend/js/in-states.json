@@ -1,149 +1,145 @@
 [{
-        "name": "Andhra Pradesh",
-        "key": "AP"
+        "key": "AN",
+        "name": "Andaman and Nicobar Islands"
     },
     {
-        "name": "Arunachal Pradesh",
-        "key": "AR"
+        "key": "AP",
+        "name": "Andhra Pradesh"
     },
     {
-        "name": "Assam",
-        "key": "AS"
+        "key": "AR",
+        "name": "Arunachal Pradesh"
     },
     {
-        "name": "Bihar",
-        "key": "BR"
+        "key": "AS",
+        "name": "Assam"
     },
     {
-        "name": "Chhattisgarh",
-        "key": "CG"
+        "key": "BR",
+        "name": "Bihar"
     },
     {
-        "name": "Goa",
-        "key": "GA"
+        "key": "CG",
+        "name": "Chandigarh"
     },
     {
-        "name": "Gujarat",
-        "key": "GJ"
+        "key": "CH",
+        "name": "Chhattisgarh"
     },
     {
-        "name": "Haryana",
-        "key": "HR"
+        "key": "DH",
+        "name": "Dadra and Nagar Haveli"
     },
     {
-        "name": "Himachal Pradesh",
-        "key": "HP"
+        "key": "DD",
+        "name": "Daman and Diu"
     },
     {
-        "name": "Jammu and Kashmir",
-        "key": "JK"
+        "key": "DL",
+        "name": "Delhi"
     },
     {
-        "name": "Jharkhand",
-        "key": "JH"
+        "key": "GA",
+        "name": "Goa"
     },
     {
-        "name": "Karnataka",
-        "key": "KA"
+        "key": "GJ",
+        "name": "Gujarat"
     },
     {
-        "name": "Kerala",
-        "key": "KL"
+        "key": "HR",
+        "name": "Haryana"
     },
     {
-        "name": "Madhya Pradesh",
-        "key": "MP"
+        "key": "HP",
+        "name": "Himachal Pradesh"
     },
     {
-        "name": "Maharashtra",
-        "key": "MH"
+        "key": "JK",
+        "name": "Jammu and Kashmir"
     },
     {
-        "name": "Manipur",
-        "key": "MN"
+        "key": "JH",
+        "name": "Jharkhand"
     },
     {
-        "name": "Meghalaya",
-        "key": "ML"
+        "key": "KA",
+        "name": "Karnataka"
     },
     {
-        "name": "Mizoram",
-        "key": "MZ"
+        "key": "KL",
+        "name": "Kerala"
     },
     {
-        "name": "Nagaland",
-        "key": "NL"
+        "key": "LD",
+        "name": "Lakshadweep"
     },
     {
-        "name": "Orissa",
-        "key": "OR"
+        "key": "MP",
+        "name": "Madhya Pradesh"
     },
     {
-        "name": "Punjab",
-        "key": "PB"
+        "key": "MH",
+        "name": "Maharashtra"
     },
     {
-        "name": "Rajasthan",
-        "key": "RJ"
+        "key": "MN",
+        "name": "Manipur"
     },
     {
-        "name": "Sikkim",
-        "key": "SK"
+        "key": "ML",
+        "name": "Meghalaya"
     },
     {
-        "name": "Tamil Nadu",
-        "key": "TN"
+        "key": "MZ",
+        "name": "Mizoram"
     },
     {
-        "name": "Tripura",
-        "key": "TR"
+        "key": "NL",
+        "name": "Nagaland"
     },
     {
-        "name": "Uttarakhand",
-        "key": "UK"
+        "key": "OR",
+        "name": "Odisha"
     },
     {
-        "name": "Uttar Pradesh",
-        "key": "UP"
+        "key": "PY",
+        "name": "Puducherry"
     },
     {
-        "name": "West Bengal",
-        "key": "WB"
+        "key": "PB",
+        "name": "Punjab"
     },
     {
-        "name": "Tamil Nadu",
-        "key": "TN"
+        "key": "RJ",
+        "name": "Rajasthan"
     },
     {
-        "name": "Tripura",
-        "key": "TR"
+        "key": "SK",
+        "name": "Sikkim"
     },
     {
-        "name": "Andaman and Nicobar Islands",
-        "key": "AN"
+        "key": "TN",
+        "name": "Tamil Nadu"
     },
     {
-        "name": "Chandigarh",
-        "key": "CH"
+        "key": "TS",
+        "name": "Telangana"
     },
     {
-        "name": "Dadra and Nagar Haveli",
-        "key": "DH"
+        "key": "TR",
+        "name": "Tripura"
     },
     {
-        "name": "Daman and Diu",
-        "key": "DD"
+        "key": "UK",
+        "name": "Uttar Pradesh"
     },
     {
-        "name": "Delhi",
-        "key": "DL"
+        "key": "UP",
+        "name": "Uttarakhand"
     },
     {
-        "name": "Lakshadweep",
-        "key": "LD"
-    },
-    {
-        "name": "Pondicherry",
-        "key": "PY"
+        "key": "WB",
+        "name": "West Bengal"
     }
 ]
