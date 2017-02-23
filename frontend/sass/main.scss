@@ -4720,6 +4720,21 @@ button.btn.btn-primary.btn-outline {
     margin: 0 auto;
 }
 
+.make-scroll {
+    overflow-y: scroll;
+    max-width: initial;
+}
+
+.title-score {
+    line-height: 2;
+}
+
+.heading-profile>h2>span.points {
+    color: #505050;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
 @import "training-plan";
 @import "ng-img-crop";
 @import "fancybox-override";
