@@ -9,6 +9,7 @@ module.exports = [
   'bower_components/highcharts/highcharts-more.js',
   'bower_components/highcharts/modules/exporting.js',
   'bower_components/highcharts/modules/map.js',
+  'bower_components/highcharts/modules/data.js',
   'frontend/js/in-all-disputed.js',
 
   //Angular Libs

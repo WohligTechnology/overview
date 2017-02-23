@@ -1,4 +1,4 @@
-Highcharts.maps["countries/in/custom/in-all-disputed"] = {
+Highcharts.maps = {
     "title": "India with disputed territories",
     "version": "1.1.2",
     "type": "FeatureCollection",

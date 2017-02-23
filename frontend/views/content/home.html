@@ -10,10 +10,26 @@
             <div class="activity-sec">
                 <div class="widget-title">
                     <h3>Map</h3>
-                    <span>Click on a country</span>
+                    <!--<span>Click on a country</span>-->
                 </div>
-                <div class="map-viewer">
-                    <highchart id="map" class="map-viewer" map="mapConfig.series.mapdata" config="mapConfig"></highchart>
+                <div class="map-viewer make-scroll">
+                    <!--<highchart id="map" class="map-viewer" map="mapConfig.series.mapdata" config="mapConfig"></highchart>-->
+                    <div class="states-score">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>States</th>
+                                    <th>Out of 30</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="state in states | orderBy:'-score'">
+                                    <td>{{state.name}}</td>
+                                    <td>{{state.score}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

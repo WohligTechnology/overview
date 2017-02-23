@@ -157,39 +157,220 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "value": 35
             }
         ];
+        $scope.states = [{
+                "name": "Andhra Pradesh",
+                "key": "AP",
+                "score": "26"
+            },
+            {
+                "name": "Arunachal Pradesh",
+                "key": "AR",
+                "score": "26"
+            },
+            {
+                "name": "Assam",
+                "key": "AS",
+                "score": "10"
+            },
+            {
+                "name": "Bihar",
+                "key": "BR",
+                "score": "20"
+            },
+            {
+                "name": "Chhattisgarh",
+                "key": "CG",
+                "score": "20"
+            },
+            {
+                "name": "Goa",
+                "key": "GA",
+                "score": "10"
+            },
+            {
+                "name": "Gujarat",
+                "key": "GJ",
+                "score": "20"
+            },
+            {
+                "name": "Haryana",
+                "key": "HR",
+                "score": "10"
+            },
+            {
+                "name": "Himachal Pradesh",
+                "key": "HP",
+                "score": "15"
+            },
+            {
+                "name": "Jammu and Kashmir",
+                "key": "JK",
+                "score": "20"
+            },
+            {
+                "name": "Jharkhand",
+                "key": "JH",
+                "score": "25"
+            },
+            {
+                "name": "Karnataka",
+                "key": "KA",
+                "score": "26"
+            },
+            {
+                "name": "Kerala",
+                "key": "KL",
+                "score": "29"
+            },
+            {
+                "name": "Madhya Pradesh",
+                "key": "MP",
+                "score": "24"
+            },
+            {
+                "name": "Maharashtra",
+                "key": "MH",
+                "score": "29"
+            },
+            {
+                "name": "Manipur",
+                "key": "MN",
+                "score": "10"
+            },
+            {
+                "name": "Meghalaya",
+                "key": "ML",
+                "score": "24"
+            },
+            {
+                "name": "Mizoram",
+                "key": "MZ",
+                "score": "26"
+            },
+            {
+                "name": "Nagaland",
+                "key": "NL",
+                "score": "28"
+            },
+            {
+                "name": "Orissa",
+                "key": "OR",
+                "score": "24"
+            },
+            {
+                "name": "Punjab",
+                "key": "PB",
+                "score": "24"
+            },
+            {
+                "name": "Rajasthan",
+                "key": "RJ",
+                "score": "21"
+            },
+            {
+                "name": "Sikkim",
+                "key": "SK",
+                "score": "24"
+            },
+            {
+                "name": "Tamil Nadu",
+                "key": "TN",
+                "score": "24"
+            },
+            {
+                "name": "Tripura",
+                "key": "TR",
+                "score": "15"
+            },
+            {
+                "name": "Uttarakhand",
+                "key": "UK",
+                "score": "26"
+            },
+            {
+                "name": "Uttar Pradesh",
+                "key": "UP",
+                "score": "29"
+            },
+            {
+                "name": "West Bengal",
+                "key": "WB",
+                "score": "24"
+            },
+            {
+                "name": "Tamil Nadu",
+                "key": "TN",
+                "score": "23"
+            },
+            {
+                "name": "Andaman and Nicobar Islands",
+                "key": "AN",
+                "score": "23"
+            },
+            {
+                "name": "Chandigarh",
+                "key": "CH",
+                "score": "24"
+            },
+            {
+                "name": "Dadra and Nagar Haveli",
+                "key": "DH",
+                "score": "26"
+            },
+            {
+                "name": "Daman and Diu",
+                "key": "DD",
+                "score": "24"
+            },
+            {
+                "name": "Delhi",
+                "key": "DL",
+                "score": "20"
+            },
+            {
+                "name": "Lakshadweep",
+                "key": "LD",
+                "score": "16"
+            },
+            {
+                "name": "Pondicherry",
+                "key": "PY",
+                "score": "26"
+            }
+        ];
 
-        $scope.mapConfig = {
-            title: {
-                text: 'Map View'
-            },
-            mapNavigation: {
-                enabled: true,
-                buttonOptions: {
-                    verticalAlign: 'bottom'
-                }
-            },
-            colorAxis: {
-                min: 0
-            },
-            series: [{
-                data: data,
-                mapData: Highcharts.maps['countries/in/custom/in-all-disputed'],
-                joinBy: 'hc-key',
-                name: 'Random data',
-                states: {
-                    hover: {
-                        color: '#a4edba'
-                    }
-                },
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
-                }
-            }],
-            credits: {
-                enabled: false
-            },
-        };
+        // $scope.mapConfig = {
+        //     title: {
+        //         text: 'Map View'
+        //     },
+        //     mapNavigation: {
+        //         enabled: true,
+        //         buttonOptions: {
+        //             verticalAlign: 'bottom'
+        //         }
+        //     },
+        //     colorAxis: {
+        //         min: 0
+        //     },
+        //     series: [{
+        //         data: data,
+        //         mapData: Highcharts.maps['countries/in/custom/in-all-disputed'],
+        //         joinBy: 'hc-key',
+        //         name: 'Random data',
+        //         states: {
+        //             hover: {
+        //                 color: '#a4edba'
+        //             }
+        //         },
+        //         dataLabels: {
+        //             enabled: true,
+        //             format: '{point.name}'
+        //         }
+        //     }],
+        //     credits: {
+        //         enabled: false
+        //     },
+        // };
 
         $scope.graphConfig = {
             options: {
