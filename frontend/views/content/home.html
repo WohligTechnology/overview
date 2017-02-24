@@ -9,7 +9,7 @@
         <div class="widget">
             <div class="activity-sec">
                 <div class="widget-title">
-                    <h3>Map</h3>
+                    <h3>All States</h3>
                     <!--<span>Click on a country</span>-->
                 </div>
                 <div class="map-viewer make-scroll">
@@ -19,7 +19,7 @@
                             <thead>
                                 <tr>
                                     <th>States</th>
-                                    <th>Out of 30</th>
+                                    <th>Out of 61</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,30 +40,14 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Top 5 States</th>
-                            <th>Out of 30</th>
+                            <th>Top 5 </th>
+                            <th>Out of 61</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Mahasratra</td>
-                            <td>29</td>
-                        </tr>
-                        <tr>
-                            <td>Gujrat</td>
-                            <td>27</td>
-                        </tr>
-                        <tr>
-                            <td>Karnataka</td>
-                            <td>26</td>
-                        </tr>
-                        <tr>
-                            <td>Tamilnadu</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <td>Andrapradesh</td>
-                            <td>22</td>
+                        <tr ng-repeat="state in states | orderBy:'-score' | limitTo : 5">
+                            <td>{{state.name}}</td>
+                            <td>{{state.score}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -74,30 +58,14 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Bottom 5 States</th>
-                            <th>Out of 30</th>
+                            <th>Bottom 5 </th>
+                            <th>Out of 61</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Delhi</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>Madhyapradesh</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>Meghala</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>Assam</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Tripura</td>
-                            <td>4</td>
+                        <tr ng-repeat="state in states | orderBy:'score' | limitTo : 5">
+                            <td>{{state.name}}</td>
+                            <td>{{state.score}}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -6,48 +6,24 @@
     <div class="quick-links">
         <ul>
             <li class="user-name">Welcome, <span>Sohan</span></li>
-            <li ng-click="readNotification()">
-                <a title="Notifications" class="show-stats relative blue-skin" tooltip-placement="left" uib-tooltip="Notification">
-                    <i class="fa fa-bell"></i>
-                    <div class="badger" ng-if="notificationCount!=0">10</div>
-                </a>
-                <div class="notify-cont dropdown-notify" ng-show="isShown" ng-if="!isAthlete">
-                    <ul class="list-unstyled notify-list">
-                        <li ng-repeat="notification in coachnotifications">
-                            <!-- Coach Accept/Reject -->
-                            <div ng-if="notification.type == 'athleteSubscription'">
-                                <div class="pull-right hide">
-                                    <button class="btn btn-small btn-blue" ng-click="acceptRequest(notification._id)" tooltip-placement="top" uib-tooltip="Accept">
-                                        <i class="fa fa-check"></i>
-                                        </button>
-                                    <button class="btn btn-small btn-danger" ng-click="reason(notification._id);" tooltip-placement="top" uib-tooltip="Reject">
-                                        <i class="fa fa-times"></i>
-                                        </button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
             <li>
-                <a title="Logout " class="show-stats red-skin " ng-click="" tooltip-placement="bottom
-                                    " uib-tooltip="Logout "><i class="fa fa-power-off "></i></a>
+                <a title="Logout" class="show-stats red-skin" tooltip-placement="bottom" uib-tooltip="Logout"><i class="fa fa-power-off"></i></a>
             </li>
         </ul>
     </div>
 </div>
 
 <!-- Top Bar -->
-<header class="side-header light-skin opened-menu ">
-    <div class="admin-details ">
+<header class="side-header light-skin opened-menu">
+    <div class="admin-details">
         <span>
-        <img ng-src="frontend/img/logo.png" alt="{{profile.name}} {{profile.surname}} " />
+        <img ng-src="frontend/img/logo.png" alt="{{profile.name}} {{profile.surname}}" />
     </span>
         <h3>Sohan Honakeri</h3>
     </div>
-    <div class="menu-scroll ">
-        <div class="side-menus ">
-            <nav ng-include="template.menu "></nav>
+    <div class="menu-scroll">
+        <div class="side-menus">
+            <nav ng-include="template.menu"></nav>
         </div>
     </div>
 </header>

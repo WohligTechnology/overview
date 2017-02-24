@@ -158,144 +158,184 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         ];
         $scope.states = [{
-                "name": "Andhra Pradesh",
+                "key": "AN",
+                "name": "Andaman and Nicobar Islands",
+                "score": 43
+            },
+            {
                 "key": "AP",
-                "score": "26"
+                "name": "Andhra Pradesh",
+                "score": 39
             },
             {
-                "name": "Arunachal Pradesh",
                 "key": "AR",
-                "score": "26"
+                "name": "Arunachal Pradesh",
+                "score": 28
             },
             {
-                "name": "Assam",
                 "key": "AS",
-                "score": "10"
+                "name": "Assam",
+                "score": 38
             },
             {
-                "name": "Bihar",
                 "key": "BR",
-                "score": "20"
+                "name": "Bihar",
+                "score": 59
             },
             {
-                "name": "Chhattisgarh",
                 "key": "CG",
-                "score": "20"
+                "name": "Chandigarh",
+                "score": 29
             },
             {
-                "name": "Goa",
+                "key": "CH",
+                "name": "Chhattisgarh",
+                "score": 48
+            },
+            {
+                "key": "DH",
+                "name": "Dadra and Nagar Haveli",
+                "score": 28
+            },
+            {
+                "key": "DD",
+                "name": "Daman and Diu",
+                "score": 30
+            },
+            {
+                "key": "DL",
+                "name": "Delhi",
+                "score": 48
+            },
+            {
                 "key": "GA",
-                "score": "10"
+                "name": "Goa",
+                "score": 29
             },
             {
-                "name": "Gujarat",
                 "key": "GJ",
-                "score": "20"
+                "name": "Gujarat",
+                "score": 40
             },
             {
-                "name": "Haryana",
                 "key": "HR",
-                "score": "10"
+                "name": "Haryana",
+                "score": 19
             },
             {
-                "name": "Himachal Pradesh",
                 "key": "HP",
-                "score": "15"
+                "name": "Himachal Pradesh",
+                "score": 40
             },
             {
-                "name": "Jammu and Kashmir",
                 "key": "JK",
-                "score": "20"
+                "name": "Jammu and Kashmir",
+                "score": 50
             },
             {
-                "name": "Jharkhand",
                 "key": "JH",
-                "score": "25"
+                "name": "Jharkhand",
+                "score": 39
             },
             {
-                "name": "Karnataka",
                 "key": "KA",
-                "score": "26"
+                "name": "Karnataka",
+                "score": 48
             },
             {
-                "name": "Kerala",
                 "key": "KL",
-                "score": "29"
+                "name": "Kerala",
+                "score": 58
             },
             {
-                "name": "Madhya Pradesh",
+                "key": "LD",
+                "name": "Lakshadweep",
+                "score": 24
+            },
+            {
                 "key": "MP",
-                "score": "24"
+                "name": "Madhya Pradesh",
+                "score": 52
             },
             {
-                "name": "Maharashtra",
                 "key": "MH",
-                "score": "29"
+                "name": "Maharashtra",
+                "score": 51
             },
             {
-                "name": "Manipur",
                 "key": "MN",
-                "score": "10"
+                "name": "Manipur",
+                "score": 42
             },
             {
-                "name": "Meghalaya",
                 "key": "ML",
-                "score": "24"
+                "name": "Meghalaya",
+                "score": 48
             },
             {
-                "name": "Mizoram",
                 "key": "MZ",
-                "score": "26"
+                "name": "Mizoram",
+                "score": 58
             },
             {
-                "name": "Nagaland",
                 "key": "NL",
-                "score": "28"
+                "name": "Nagaland",
+                "score": 47
             },
             {
-                "name": "Orissa",
                 "key": "OR",
-                "score": "24"
+                "name": "Odisha",
+                "score": 26
             },
             {
-                "name": "Punjab",
+                "key": "PY",
+                "name": "Puducherry",
+                "score": 47
+            },
+            {
                 "key": "PB",
-                "score": "24"
+                "name": "Punjab",
+                "score": 52
             },
             {
-                "name": "Rajasthan",
                 "key": "RJ",
-                "score": "21"
+                "name": "Rajasthan",
+                "score": 47
             },
             {
-                "name": "Sikkim",
                 "key": "SK",
-                "score": "24"
+                "name": "Sikkim",
+                "score": 59
             },
             {
-                "name": "Tamil Nadu",
                 "key": "TN",
-                "score": "24"
+                "name": "Tamil Nadu",
+                "score": 47
             },
             {
-                "name": "Tripura",
+                "key": "TS",
+                "name": "Telangana",
+                "score": 37
+            },
+            {
                 "key": "TR",
-                "score": "15"
+                "name": "Tripura",
+                "score": 47
             },
             {
-                "name": "Uttarakhand",
                 "key": "UK",
-                "score": "26"
-            },
-            {
                 "name": "Uttar Pradesh",
-                "key": "UP",
-                "score": "29"
+                "score": 58
             },
             {
-                "name": "West Bengal",
+                "key": "UP",
+                "name": "Uttarakhand",
+                "score": 48
+            },
+            {
                 "key": "WB",
-                "score": "24"
+                "name": "West Bengal",
+                "score": 28
             }
         ];
 
@@ -340,17 +380,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             series: [{
                 name: 'Maharastra',
-                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                data: [81, 22, 53, 24, 35, 46, 37, 48, 59]
             }, {
                 name: 'Karnataka',
-                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+                data: [31, 42, 53, 54, 35, 86, 37, 58, 69]
             }, {
                 name: 'Gujrat',
-                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+                data: [21, 42, 83, 24, 55, 36, 57, 48, 79]
             }, {
                 name: 'Tamil Nadu',
-                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+                data: [51, 72, 73, 44, 75, 96, 47, 38, 49]
             }],
+            xAxis: {
+                categories: []
+            },
             title: {
                 text: 'Comparison'
             },
@@ -367,15 +410,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("State"); //This is the Title of the Website
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        $scope.reforms = [{
+                name: 'SHEC',
+                received: 2,
+                outOf: 3,
+            },
+            {
+                name: 'SHEP',
+                received: 3,
+                outOf: 5,
+            }, {
+                name: 'Governance & administrative reforms',
+                received: 10,
+                outOf: 13,
+            }, {
+                name: 'Financial contri - bution to Higher Education as a % of GSDP',
+                received: 2,
+                outOf: 3,
+            }, {
+                name: 'Accreditation and quality re - forms',
+                received: 2,
+                outOf: 4,
+            }, {
+                name: 'Affiliation reforms as outlined in RUSA',
+                received: 2,
+                outOf: 3,
+            }, {
+                name: 'Examination Reforms',
+                received: 2,
+                outOf: 3,
+            }, {
+                name: 'Student Centric Activities',
+                received: 2,
+                outOf: 3,
+            }, {
+                name: 'Data',
+                received: 20,
+                outOf: 24,
+            }
+        ];
+
+        $scope.sumReceived = function () {
+            return _.sumBy($scope.reforms, 'received');
+        };
+        $scope.sumOutOf = function () {
+            return _.sumBy($scope.reforms, 'outOf');
+        };
+
+        $scope.marksData = [];
+
+        for (var i = 0; i < $scope.reforms.length; i++) {
+            $scope.marksData.push({
+                y: +($scope.reforms[i].received / $scope.reforms[i].outOf * 100).toFixed(2),
+                name: $scope.reforms[i].name
+            });
+        }
+
         $scope.graphConfig = {
             options: {
                 chart: {
                     type: 'bar'
                 }
             },
+            xAxis: {
+                categories: []
+            },
             series: [{
-                name: 'Maharashtra',
-                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                name: 'State Name',
+                data: $scope.marksData
             }],
             title: {
                 text: 'June 2017'
@@ -443,7 +546,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // the value axis
             yAxis: {
                 min: 0,
-                max: 100,
+                max: $scope.sumOutOf(),
 
                 minorTickInterval: 'auto',
                 minorTickWidth: 1,
@@ -480,9 +583,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             series: [{
                 name: 'Result',
-                data: [80],
+                data: [$scope.sumReceived()],
                 tooltip: {
-                    valueSuffix: ' %'
+                    valueSuffix: ''
                 }
             }],
             credits: {
@@ -495,7 +598,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
 
         $scope.changeLanguage = function () {
-            console.log("Language CLicked");
+            console.log("Language Clicked");
 
             if (!$.jStorage.get("language")) {
                 $translate.use("hi");
