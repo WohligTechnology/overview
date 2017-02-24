@@ -66,7 +66,7 @@ module.exports.globals = {
 global["mongoose"] = require('mongoose');
 global["deepPopulate"] = require('mongoose-deep-populate')(mongoose);
 global["uniqueValidator"] = require('mongoose-unique-validator');
-global["timestamps"] = require('mongoglose-timestamp');
+global["timestamps"] = require('mongoose-timestamp');
 global["validators"] = require('mongoose-validators');
 global["monguurl"] = require('monguurl');
 require('mongoose-middleware').initialize(mongoose);
