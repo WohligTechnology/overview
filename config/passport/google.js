@@ -1,5 +1,5 @@
-global["GoogleKey"] = "AIzaSyDMgwXi6D38isibUfShc9C2mJyaHZZ2LpE";
-global["GoogleclientId"] = "529279279497-hdm2ul03erq4kitk7qlqbf41h6pl8f7p.apps.googleusercontent.com";
+global["GoogleKey"] = "HVQ0kNC8WDxXiFrcgkfIZiuZ";
+global["GoogleclientId"] = "87218219451-0iorjg0h6h4g2trvjbo4krntaa71csne.apps.googleusercontent.com";
 global["GoogleclientSecret"] = "nNZiqXW5U2364QI9--sVIR8B";
 
 passport.use(new GoogleStrategy({
