@@ -66,7 +66,7 @@ module.exports.globals = {
 global["mongoose"] = require('mongoose');
 global["deepPopulate"] = require('mongoose-deep-populate')(mongoose);
 global["uniqueValidator"] = require('mongoose-unique-validator');
-global["timestamps"] = require('mongoose-timestamp');
+global["timestamps"] = require('mongoglose-timestamp');
 global["validators"] = require('mongoose-validators');
 global["monguurl"] = require('monguurl');
 require('mongoose-middleware').initialize(mongoose);
@@ -97,6 +97,7 @@ global["passport"] = require('passport');
 global["LocalStrategy"] = require('passport-local').Strategy;
 global["FacebookStrategy"] = require('passport-facebook').Strategy;
 global["TwitterStrategy"] = require('passport-twitter').Strategy;
+global["GoogleStrategy"] = require('passport-google-auth').Strategy;
 
 // Files to Import
 global["jsFiles"] = require("../frontend/files.js");
