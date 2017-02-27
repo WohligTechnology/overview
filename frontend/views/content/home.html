@@ -13,19 +13,23 @@
                     <!--<span>Click on a country</span>-->
                 </div>
                 <div class="map-viewer make-scroll">
-                    <!--<highchart id="map" class="map-viewer" map="mapConfig.series.mapdata" config="mapConfig"></highchart>-->
+                    <!--<highchart id="map" class="map-viewer" config="mapConfig"></highchart>-->
                     <div class="states-score">
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
                                     <th>States</th>
-                                    <th>Out of 61</th>
+                                    <th>Score</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="state in states | orderBy:'-score'">
                                     <td>{{state.name}}</td>
                                     <td>{{state.score}}</td>
+                                    <td>
+                                        <highchart config="sparkLineConfig"></highchart>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -41,7 +45,7 @@
                     <thead>
                         <tr>
                             <th>Top 5 </th>
-                            <th>Out of 61</th>
+                            <th>Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,7 +63,7 @@
                     <thead>
                         <tr>
                             <th>Bottom 5 </th>
-                            <th>Out of 61</th>
+                            <th>Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,22 +77,24 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="widget">
-            <div class="activity-sec">
-                <div class="widget-title">
-                    <div class="button-group pull-right">
-                        <button class="btn btn-primary">Top 5</button>
-                        <button class="btn btn-primary">Bottom 5</button>
-                        <button class="btn btn-primary">Custom 5</button>
-                    </div>
-                    <h3>Comparison Graph</h3>
-                </div>
-                <highchart id="overview-graph" config="graphConfig"></highchart>
-
+<div class="widget">
+    <div class="activity-sec">
+        <div class="widget-title">
+            <div class="button-group pull-right">
+                <button class="btn btn-primary">Top 5</button>
+                <button class="btn btn-primary">Bottom 5</button>
+                <button class="btn btn-primary">Custom 5</button>
+            </div>
+            <h3>Comparison Graph</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <highchart class="graph-viewer" id="overview-graph" config="graphConfig"></highchart>
+            </div>
+            <div class="col-md-6">
+                <select ng-model="reforms.selected" ng-options="r for r in reforms" class="form-control"><option value="">Please Select</option></select>
+                <highchart class="graph-viewer" id="overview-graph" config="chartConfig2"></highchart>
             </div>
         </div>
-
     </div>
 </div>

@@ -12,332 +12,218 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        var data = [{
-                "hc-key": "in-an",
-                "value": 0
-            },
-            {
-                "hc-key": "in-wb",
-                "value": 1
-            },
-            {
-                "hc-key": "in-ld",
-                "value": 2
-            },
-            {
-                "hc-key": "in-5390",
-                "value": 3
-            },
-            {
-                "hc-key": "in-py",
-                "value": 4
-            },
-            {
-                "hc-key": "in-3464",
-                "value": 5
-            },
-            {
-                "hc-key": "in-mz",
-                "value": 6
-            },
-            {
-                "hc-key": "in-as",
-                "value": 7
-            },
-            {
-                "hc-key": "in-pb",
-                "value": 8
-            },
-            {
-                "hc-key": "in-ga",
-                "value": 9
-            },
-            {
-                "hc-key": "in-2984",
-                "value": 10
-            },
-            {
-                "hc-key": "in-jk",
-                "value": 11
-            },
-            {
-                "hc-key": "in-hr",
-                "value": 12
-            },
-            {
-                "hc-key": "in-nl",
-                "value": 13
-            },
-            {
-                "hc-key": "in-mn",
-                "value": 14
-            },
-            {
-                "hc-key": "in-tr",
-                "value": 15
-            },
-            {
-                "hc-key": "in-mp",
-                "value": 16
-            },
-            {
-                "hc-key": "in-ct",
-                "value": 17
-            },
-            {
-                "hc-key": "in-ar",
-                "value": 18
-            },
-            {
-                "hc-key": "in-ml",
-                "value": 19
-            },
-            {
-                "hc-key": "in-kl",
-                "value": 20
-            },
-            {
-                "hc-key": "in-tn",
-                "value": 21
-            },
-            {
-                "hc-key": "in-ap",
-                "value": 22
-            },
-            {
-                "hc-key": "in-ka",
-                "value": 23
-            },
-            {
-                "hc-key": "in-mh",
-                "value": 24
-            },
-            {
-                "hc-key": "in-or",
-                "value": 25
-            },
-            {
-                "hc-key": "in-dn",
-                "value": 26
-            },
-            {
-                "hc-key": "in-dl",
-                "value": 27
-            },
-            {
-                "hc-key": "in-hp",
-                "value": 28
-            },
-            {
-                "hc-key": "in-rj",
-                "value": 29
-            },
-            {
-                "hc-key": "in-up",
-                "value": 30
-            },
-            {
-                "hc-key": "in-ut",
-                "value": 31
-            },
-            {
-                "hc-key": "in-jh",
-                "value": 32
-            },
-            {
-                "hc-key": "in-ch",
-                "value": 33
-            },
-            {
-                "hc-key": "in-br",
-                "value": 34
-            },
-            {
-                "hc-key": "in-sk",
-                "value": 35
-            }
-        ];
+        $scope.reforms = ['SHEC', 'SHEP', 'Governance & Administrative', 'Financial contri - bution to Higher Education as a % of GSDP', 'Accreditation & Quality', 'Affiliation reforms', 'Examination Reforms'];
+        $scope.reforms.selected = 'SHEC';
+
         $scope.states = [{
-                "key": "AN",
                 "name": "Andaman and Nicobar Islands",
-                "score": 43
-            },
-            {
-                "key": "AP",
-                "name": "Andhra Pradesh",
-                "score": 39
-            },
-            {
-                "key": "AR",
-                "name": "Arunachal Pradesh",
-                "score": 28
-            },
-            {
-                "key": "AS",
-                "name": "Assam",
-                "score": 38
-            },
-            {
-                "key": "BR",
-                "name": "Bihar",
-                "score": 59
-            },
-            {
-                "key": "CG",
-                "name": "Chandigarh",
-                "score": 29
-            },
-            {
-                "key": "CH",
-                "name": "Chhattisgarh",
-                "score": 48
-            },
-            {
-                "key": "DH",
-                "name": "Dadra and Nagar Haveli",
-                "score": 28
-            },
-            {
-                "key": "DD",
-                "name": "Daman and Diu",
-                "score": 30
-            },
-            {
-                "key": "DL",
-                "name": "Delhi",
-                "score": 48
-            },
-            {
-                "key": "GA",
-                "name": "Goa",
-                "score": 29
-            },
-            {
-                "key": "GJ",
-                "name": "Gujarat",
-                "score": 40
-            },
-            {
-                "key": "HR",
-                "name": "Haryana",
                 "score": 19
             },
             {
-                "key": "HP",
-                "name": "Himachal Pradesh",
-                "score": 40
+                "name": "Andhra Pradesh",
+                "score": 23
             },
             {
-                "key": "JK",
-                "name": "Jammu and Kashmir",
-                "score": 50
+                "name": "Arunachal Pradesh",
+                "score": 21
             },
             {
-                "key": "JH",
-                "name": "Jharkhand",
-                "score": 39
+                "name": "Assam",
+                "score": 11
             },
             {
-                "key": "KA",
-                "name": "Karnataka",
-                "score": 48
+                "name": "Bihar",
+                "score": 20
             },
             {
-                "key": "KL",
-                "name": "Kerala",
-                "score": 58
-            },
-            {
-                "key": "LD",
-                "name": "Lakshadweep",
+                "name": "Chandigarh",
                 "score": 24
             },
             {
-                "key": "MP",
-                "name": "Madhya Pradesh",
-                "score": 52
+                "name": "Chhattisgarh",
+                "score": 22
             },
             {
-                "key": "MH",
-                "name": "Maharashtra",
-                "score": 51
+                "name": "Dadra and Nagar Haveli",
+                "score": 15
             },
             {
-                "key": "MN",
-                "name": "Manipur",
-                "score": 42
+                "name": "Daman and Diu",
+                "score": 13
             },
             {
-                "key": "ML",
-                "name": "Meghalaya",
-                "score": 48
+                "name": "Delhi",
+                "score": 7
             },
             {
-                "key": "MZ",
-                "name": "Mizoram",
-                "score": 58
+                "name": "Goa",
+                "score": 24
             },
             {
-                "key": "NL",
-                "name": "Nagaland",
-                "score": 47
+                "name": "Gujarat",
+                "score": 22
             },
             {
-                "key": "OR",
-                "name": "Odisha",
-                "score": 26
+                "name": "Haryana",
+                "score": 16
             },
             {
-                "key": "PY",
-                "name": "Puducherry",
-                "score": 47
+                "name": "Himachal Pradesh",
+                "score": 22
             },
             {
-                "key": "PB",
-                "name": "Punjab",
-                "score": 52
+                "name": "Jammu and Kashmir",
+                "score": 21
             },
             {
-                "key": "RJ",
-                "name": "Rajasthan",
-                "score": 47
+                "name": "Jharkhand",
+                "score": 21
             },
             {
-                "key": "SK",
-                "name": "Sikkim",
-                "score": 59
-            },
-            {
-                "key": "TN",
-                "name": "Tamil Nadu",
-                "score": 47
-            },
-            {
-                "key": "TS",
-                "name": "Telangana",
-                "score": 37
-            },
-            {
-                "key": "TR",
-                "name": "Tripura",
-                "score": 47
-            },
-            {
-                "key": "UK",
-                "name": "Uttar Pradesh",
-                "score": 58
-            },
-            {
-                "key": "UP",
-                "name": "Uttarakhand",
-                "score": 48
-            },
-            {
-                "key": "WB",
-                "name": "West Bengal",
+                "name": "Karnataka",
                 "score": 28
-            }
+            },
+            {
+                "name": "Kerala",
+                "score": 23
+            },
+            {
+                "name": "Lakshadweep",
+                "score": 0
+            },
+            {
+                "name": "Madhya Pradesh",
+                "score": 16
+            },
+            {
+                "name": "Maharashtra",
+                "score": 23
+            },
+            {
+                "name": "Manipur",
+                "score": 17
+            },
+            {
+                "name": "Meghalaya",
+                "score": 18
+            },
+            {
+                "name": "Mizoram",
+                "score": 25
+            },
+            {
+                "name": "Nagaland",
+                "score": 19
+            },
+            {
+                "name": "Odisha",
+                "score": 23
+            },
+            {
+                "name": "Puducherry",
+                "score": 21
+            },
+            {
+                "name": "Punjab",
+                "score": 14
+            },
+            {
+                "name": "Rajasthan",
+                "score": 23
+            },
+            {
+                "name": "Sikkim",
+                "score": 18
+            },
+            {
+                "name": "Tamil Nadu",
+                "score": 22
+            },
+            {
+                "name": "Telangana",
+                "score": 19
+            },
+            {
+                "name": "Tripura",
+                "score": 15
+            },
+            {
+                "name": "Uttar Pradesh",
+                "score": 21
+            },
+            {
+                "name": "Uttarakhand",
+                "score": 18
+            },
+            {
+                "name": "West Bengal",
+                "score": 27
+            },
         ];
+
+        $scope.chartConfig2 = {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    '13-14',
+                    '15-16',
+                    '16-17',
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Karnataka',
+                data: [4, 0, 5]
+
+            }, {
+                name: 'West Bengal',
+                data: [3, 0, 5]
+
+            }, {
+                name: 'Mizoram',
+                data: [0, 0, 3]
+
+            }, {
+                name: 'Chandigarh',
+                data: [1, 0, 4]
+
+            }, {
+                name: 'Goa',
+                data: [0, 0, 4]
+
+            }],
+            exporting: {
+                enabled: false
+            },
+        };
 
         // $scope.mapConfig = {
         //     title: {
@@ -373,34 +259,136 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // };
 
         $scope.graphConfig = {
-            options: {
-                chart: {
-                    type: 'bar'
-                }
+            chart: {
+                type: 'areaspline'
             },
             series: [{
-                name: 'Maharastra',
-                data: [81, 22, 53, 24, 35, 46, 37, 48, 59]
-            }, {
                 name: 'Karnataka',
-                data: [31, 42, 53, 54, 35, 86, 37, 58, 69]
+                data: [12, 0, 28]
+
             }, {
-                name: 'Gujrat',
-                data: [21, 42, 83, 24, 55, 36, 57, 48, 79]
+                name: 'West Bengal',
+                data: [3, 0, 5]
+
             }, {
-                name: 'Tamil Nadu',
-                data: [51, 72, 73, 44, 75, 96, 47, 38, 49]
+                name: 'Mizoram',
+                data: [0, 0, 3]
+
+            }, {
+                name: 'Chandigarh',
+                data: [1, 0, 4]
+
+            }, {
+                name: 'Goa',
+                data: [0, 0, 4]
+
             }],
             xAxis: {
-                categories: []
+                categories: [
+                    '13-14',
+                    '15-16',
+                    '16-17',
+                ],
+                crosshair: true
             },
             title: {
-                text: 'Comparison'
+                text: 'Total Score'
             },
             credits: {
                 enabled: false
             },
-            loading: false
+            loading: false,
+            exporting: {
+                enabled: false
+            },
+        };
+
+        $scope.sparkLineConfig = {
+            chart: {
+                backgroundColor: null,
+                borderWidth: 0,
+                type: 'area',
+                margin: [2, 0, 2, 0],
+                width: 120,
+                height: 20,
+                style: {
+                    overflow: 'visible'
+                },
+                skipClone: true
+            },
+            title: {
+                text: ''
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    text: null
+                },
+                startOnTick: false,
+                endOnTick: false,
+                tickPositions: []
+            },
+            yAxis: {
+                endOnTick: false,
+                startOnTick: false,
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    text: null
+                },
+                tickPositions: [0]
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    animation: false,
+                    lineWidth: 1,
+                    shadow: false,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    marker: {
+                        radius: 1,
+                        states: {
+                            hover: {
+                                radius: 2
+                            }
+                        }
+                    },
+                    fillOpacity: 0.25
+                },
+                column: {
+                    negativeColor: '#910000',
+                    borderColor: 'silver'
+                }
+            },
+            exporting: {
+                enabled: false
+            },
+            series: [{
+                data: [{
+                        y: 1,
+                        name: '14-15'
+                    }, {
+                        y: 3,
+                        name: '15-16'
+                    },
+                    {
+                        y: 2,
+                        name: '16-17'
+                    }
+                ]
+            }]
         };
 
     })
@@ -488,6 +476,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             loading: false
         };
+
         $scope.meterConfig = {
             chart: {
                 type: 'gauge',
