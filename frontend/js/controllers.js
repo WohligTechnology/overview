@@ -402,6 +402,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.reforms = ['SHEC', 'SHEP', 'Governance & Administrative', 'Financial contri - bution to Higher Education as a % of GSDP', 'Accreditation & Quality', 'Affiliation reforms', 'Examination Reforms'];
         $scope.reforms.selected = 'SHEC';
 
+
         $scope.sparkLineConfig = {
             chart: {
                 backgroundColor: null,
