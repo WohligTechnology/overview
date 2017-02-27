@@ -399,82 +399,209 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.reforms = [{
+        $scope.reforms = ['SHEC', 'SHEP', 'Governance & Administrative', 'Financial contri - bution to Higher Education as a % of GSDP', 'Accreditation & Quality', 'Affiliation reforms', 'Examination Reforms'];
+        $scope.reforms.selected = 'SHEC';
+
+        $scope.sparkLineConfig = {
+            chart: {
+                backgroundColor: null,
+                borderWidth: 0,
+                type: 'area',
+                margin: [2, 0, 2, 0],
+                width: 120,
+                height: 20,
+                style: {
+                    overflow: 'visible'
+                },
+                skipClone: true
+            },
+            title: {
+                text: ''
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    text: null
+                },
+                startOnTick: false,
+                endOnTick: false,
+                tickPositions: []
+            },
+            yAxis: {
+                endOnTick: false,
+                startOnTick: false,
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    text: null
+                },
+                tickPositions: [0]
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    animation: false,
+                    lineWidth: 1,
+                    shadow: false,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    marker: {
+                        radius: 1,
+                        states: {
+                            hover: {
+                                radius: 2
+                            }
+                        }
+                    },
+                    fillOpacity: 0.25
+                },
+                column: {
+                    negativeColor: '#910000',
+                    borderColor: 'silver'
+                }
+            },
+            exporting: {
+                enabled: false
+            },
+            series: [{
+                data: [{
+                        y: 1,
+                        name: '14-15'
+                    }, {
+                        y: 3,
+                        name: '15-16'
+                    },
+                    {
+                        y: 2,
+                        name: '16-17'
+                    }
+                ]
+            }]
+        };
+
+        $scope.reforms1 = [{
                 name: 'SHEC',
-                received: 2,
-                outOf: 3,
+                y: 1,
             },
             {
                 name: 'SHEP',
-                received: 3,
-                outOf: 5,
+                y: 0,
             }, {
                 name: 'Governance & administrative reforms',
-                received: 10,
-                outOf: 13,
+                y: 3,
             }, {
                 name: 'Financial contri - bution to Higher Education as a % of GSDP',
-                received: 2,
-                outOf: 3,
+                y: 3,
             }, {
-                name: 'Accreditation and quality re - forms',
-                received: 2,
-                outOf: 4,
+                name: 'Accreditation & Quality',
+                y: 1,
             }, {
-                name: 'Affiliation reforms as outlined in RUSA',
-                received: 2,
-                outOf: 3,
+                name: 'Affiliation reforms',
+                y: 3,
             }, {
                 name: 'Examination Reforms',
-                received: 2,
-                outOf: 3,
-            }, {
-                name: 'Student Centric Activities',
-                received: 2,
-                outOf: 3,
-            }, {
-                name: 'Data',
-                received: 20,
-                outOf: 24,
+                y: 3,
             }
         ];
 
+        $scope.reforms2 = [{
+                name: 'SHEC',
+                y: 0,
+            },
+            {
+                name: 'SHEP',
+                y: 0,
+            }, {
+                name: 'Governance & administrative reforms',
+                y: 0,
+            }, {
+                name: 'Financial contri - bution to Higher Education as a % of GSDP',
+                y: 0,
+            }, {
+                name: 'Accreditation & Quality',
+                y: 0,
+            }, {
+                name: 'Affiliation reforms',
+                y: 0,
+            }, {
+                name: 'Examination Reforms',
+                y: 0,
+            }
+        ];
+
+        $scope.reforms3 = [{
+                name: 'SHEC',
+                y: 5,
+            },
+            {
+                name: 'SHEP',
+                y: 3,
+            }, {
+                name: 'Governance & administrative reforms',
+                y: 3,
+            }, {
+                name: 'Financial contri - bution to Higher Education as a % of GSDP',
+                y: 3,
+            }, {
+                name: 'Accreditation & Quality',
+                y: 3,
+            }, {
+                name: 'Affiliation reforms',
+                y: 3,
+            }, {
+                name: 'Examination Reforms',
+                y: 3,
+            },
+        ];
+
         $scope.sumReceived = function () {
-            return _.sumBy($scope.reforms, 'received');
+            return _.sumBy($scope.reforms3, 'y');
         };
         $scope.sumOutOf = function () {
-            return _.sumBy($scope.reforms, 'outOf');
+            return 35;
         };
 
-        $scope.marksData = [];
-
-        for (var i = 0; i < $scope.reforms.length; i++) {
-            $scope.marksData.push({
-                y: +($scope.reforms[i].received / $scope.reforms[i].outOf * 100).toFixed(2),
-                name: $scope.reforms[i].name
-            });
-        }
 
         $scope.graphConfig = {
-            options: {
-                chart: {
-                    type: 'bar'
-                }
+            chart: {
+                type: 'areaspline'
             },
             xAxis: {
                 categories: []
             },
             series: [{
-                name: 'State Name',
-                data: $scope.marksData
-            }],
+                    name: '13-14',
+                    data: $scope.reforms1
+                },
+                {
+                    name: '15-16',
+                    data: $scope.reforms2
+                }, {
+                    name: '16-17',
+                    data: $scope.reforms3
+                }
+            ],
             title: {
-                text: 'June 2017'
+                text: ''
             },
             credits: {
                 enabled: false
             },
-            loading: false
+            loading: false,
+            exporting: {
+                enabled: false
+            },
         };
 
         $scope.meterConfig = {
@@ -529,7 +656,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     borderWidth: 0,
                     outerRadius: '105%',
                     innerRadius: '103%'
-                }]
+                }],
+                exporting: {
+                    enabled: false
+                },
             },
 
             // the value axis
@@ -557,21 +687,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 },
                 plotBands: [{
                     from: 0,
-                    to: 35,
+                    to: 10,
                     color: '#DF5353' // red
                 }, {
-                    from: 35,
-                    to: 70,
+                    from: 10,
+                    to: 20,
                     color: '#DDDF0D' // yellow
                 }, {
-                    from: 70,
-                    to: 100,
+                    from: 20,
+                    to: 35,
                     color: '#55BF3B' // green
                 }]
             },
 
             series: [{
-                name: 'Result',
+                name: 'Total Score',
                 data: [$scope.sumReceived()],
                 tooltip: {
                     valueSuffix: ''
