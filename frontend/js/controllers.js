@@ -97,7 +97,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             {
                 "name": "Maharashtra",
-                "score": 23
+                "score": 20
             },
             {
                 "name": "Manipur",
@@ -174,7 +174,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             xAxis: {
                 categories: [
                     '13-14',
-                    '15-16',
                     '16-17',
                 ],
                 crosshair: true
@@ -201,28 +200,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             series: [{
                 name: 'Karnataka',
-                data: [4, 0, 5]
+                data: [4, 5]
 
             }, {
                 name: 'West Bengal',
-                data: [3, 0, 5]
+                data: [3, 5]
 
             }, {
                 name: 'Mizoram',
-                data: [0, 0, 3]
+                data: [0, 3]
 
             }, {
                 name: 'Chandigarh',
-                data: [1, 0, 4]
+                data: [1, 4]
 
             }, {
                 name: 'Goa',
-                data: [0, 0, 4]
+                data: [0, 4]
 
             }],
             exporting: {
                 enabled: false
             },
+            credits: {
+                enabled: false
+            }
         };
 
         // $scope.mapConfig = {
@@ -264,29 +266,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             series: [{
                 name: 'Karnataka',
-                data: [12, 0, 28]
+                data: [12, 28]
 
             }, {
                 name: 'West Bengal',
-                data: [3, 0, 5]
+                data: [3, 5]
 
             }, {
                 name: 'Mizoram',
-                data: [0, 0, 3]
+                data: [0, 3]
 
             }, {
                 name: 'Chandigarh',
-                data: [1, 0, 4]
+                data: [1, 4]
 
             }, {
                 name: 'Goa',
-                data: [0, 0, 4]
+                data: [0, 4]
 
             }],
             xAxis: {
                 categories: [
                     '13-14',
-                    '15-16',
                     '16-17',
                 ],
                 crosshair: true
@@ -377,17 +378,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             series: [{
                 data: [{
-                        y: 1,
-                        name: '14-15'
-                    }, {
-                        y: 3,
-                        name: '15-16'
-                    },
-                    {
-                        y: 2,
-                        name: '16-17'
-                    }
-                ]
+                    y: 1,
+                    name: '14-15'
+                }, {
+                    y: 2,
+                    name: '16-17'
+                }]
             }]
         };
 
@@ -479,9 +475,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 data: [{
                         y: 1,
                         name: '14-15'
-                    }, {
-                        y: 3,
-                        name: '15-16'
                     },
                     {
                         y: 2,
@@ -547,19 +540,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             },
             {
                 name: 'SHEP',
-                y: 3,
+                y: 4,
             }, {
                 name: 'Governance & administrative reforms',
-                y: 3,
+                y: 4,
             }, {
                 name: 'Financial contri - bution to Higher Education as a % of GSDP',
-                y: 3,
+                y: 4,
             }, {
                 name: 'Accreditation & Quality',
-                y: 3,
+                y: 4,
             }, {
                 name: 'Affiliation reforms',
-                y: 3,
+                y: 4,
             }, {
                 name: 'Examination Reforms',
                 y: 3,
@@ -582,17 +575,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 categories: []
             },
             series: [{
-                    name: '13-14',
-                    data: $scope.reforms1
-                },
-                {
-                    name: '15-16',
-                    data: $scope.reforms2
-                }, {
-                    name: '16-17',
-                    data: $scope.reforms3
-                }
-            ],
+                name: '16-17',
+                data: $scope.reforms3
+            }, {
+                name: '13-14',
+                data: $scope.reforms1
+            }, ],
             title: {
                 text: ''
             },
