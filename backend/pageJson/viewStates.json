@@ -1,0 +1,82 @@
+{
+    "title": "States",
+    "description": "List of Statess",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": [
+        "_id"
+    ],
+    "fields": [
+        {
+            "name": "Name",
+            "isSort": "",
+            "tableRef": "name"
+        },
+        {
+            "name": "password",
+            "isSort": "",
+            "tableRef": "password"
+        },
+        {
+            "name": "User",
+            "fieldToBeShown": "name",
+            "type": "fkListView",
+            "isSort": "",
+            "tableRef": "user"
+        }
+    ],
+    "action": [
+        {
+            "name": "edit",
+            "icon": "fa-pencil",
+            "buttonClass": "btn-primary",
+            "type": "page",
+            "action": "editStates",
+            "fieldsToSend": {
+                "_id": "_id"
+            }
+        },
+        {
+            "name": "delete",
+            "icon": "fa-trash",
+            "buttonClass": "btn-danger",
+            "type": "apiCallConfirm",
+            "title": "Delete States",
+            "content": "Are you sure you want to delete States?",
+            "api": "States/delete",
+            "fieldsToSend": {
+                "name": "_id",
+                "value": "_id"
+            }
+        }
+    ],
+    "button": [
+        {
+            "name": "Excel Export",
+            "icon": "print",
+            "class": "btn-danger",
+            "type": "redirect",
+            "action": "States/generateExcel",
+            "linkType": "admin"
+        },
+        {
+            "name": "Upload Excel",
+            "icon": "delete",
+            "class": "btn-warning",
+            "type": "redirect",
+            "action": "excel-upload/States",
+            "linkType": "internal"
+        },
+        {
+            "name": "Create",
+            "icon": "plus",
+            "class": "btn-success",
+            "type": "page",
+            "action": "createStates"
+        }
+    ],
+    "apiCall": {
+        "url": "States/search",
+        "params": "_id"
+    }
+}

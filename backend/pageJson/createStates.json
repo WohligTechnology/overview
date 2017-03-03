@@ -1,0 +1,67 @@
+{
+    "title": "Create States",
+    "name": "States",
+    "jsonPage": "viewStates",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": [
+        "States"
+    ],
+    "fields": [
+        {
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": [
+                "required",
+                "trim",
+                "unique"
+            ],
+            "url": ""
+        },
+        {
+            "name": "Password",
+            "type": "password",
+            "tableRef": "password",
+            "placeholder": "Enter Password",
+            "id": "password",
+            "url": ""
+        },
+        {
+            "name": "User",
+            "type": "selectFromTable",
+            "tableRef": "user",
+            "searchApi": "searchCall",
+            "placeholder": "Enter User",
+            "id": "user",
+            "url": "User/search"
+        }
+    ],
+    "action": [
+        {
+            "name": "submit",
+            "action": "submitStates",
+            "stateName": {
+                "page": "page",
+                "json": {
+                    "id": "viewStates"
+                }
+            }
+        },
+        {
+            "name": "cancel",
+            "sideMenuRedirect": true,
+            "stateName": {
+                "page": "page",
+                "json": {
+                    "id": "viewStates"
+                }
+            }
+        }
+    ],
+    "apiCall": {
+        "url": "States/save"
+    }
+}

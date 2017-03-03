@@ -1,0 +1,70 @@
+{
+    "title": "MasterReform",
+    "description": "List of MasterReforms",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": [
+        "_id"
+    ],
+    "fields": [
+        {
+            "name": "category",
+            "isSort": "",
+            "tableRef": "category"
+        }
+    ],
+    "action": [
+        {
+            "name": "edit",
+            "icon": "fa-pencil",
+            "buttonClass": "btn-primary",
+            "type": "page",
+            "action": "editMasterReform",
+            "fieldsToSend": {
+                "_id": "_id"
+            }
+        },
+        {
+            "name": "delete",
+            "icon": "fa-trash",
+            "buttonClass": "btn-danger",
+            "type": "apiCallConfirm",
+            "title": "Delete MasterReform",
+            "content": "Are you sure you want to delete MasterReform?",
+            "api": "MasterReform/delete",
+            "fieldsToSend": {
+                "name": "_id",
+                "value": "_id"
+            }
+        }
+    ],
+    "button": [
+        {
+            "name": "Excel Export",
+            "icon": "print",
+            "class": "btn-danger",
+            "type": "redirect",
+            "action": "MasterReform/generateExcel",
+            "linkType": "admin"
+        },
+        {
+            "name": "Upload Excel",
+            "icon": "delete",
+            "class": "btn-warning",
+            "type": "redirect",
+            "action": "excel-upload/MasterReform",
+            "linkType": "internal"
+        },
+        {
+            "name": "Create",
+            "icon": "plus",
+            "class": "btn-success",
+            "type": "page",
+            "action": "createMasterReform"
+        }
+    ],
+    "apiCall": {
+        "url": "MasterReform/search",
+        "params": "_id"
+    }
+}
