@@ -35,9 +35,9 @@ jsonservicemod.service('JsonService', function ($http, TemplateService, $state, 
           }
           break;
 
-        case "masterReformCreate":
+        case "master-reform":
           {
-            TemplateService.changecontent("masterReformCreate");
+            TemplateService.changecontent("master-reform");
           }
           break;
       }

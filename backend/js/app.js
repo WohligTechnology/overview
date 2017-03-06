@@ -82,7 +82,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             controller: 'JagzCtrl'
         })
         .state('master-reform', {
-            url: "/page/:id/{page:.*}/{keyword:.*}",
+            url: "/master-reform",
             templateUrl: "views/template.html",
             controller: 'masterReformCtrl'
         });

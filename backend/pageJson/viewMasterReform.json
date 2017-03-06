@@ -59,8 +59,7 @@
             "name": "Create",
             "icon": "plus",
             "class": "btn-success",
-            "type": "page",
-            "action": "createMasterReform"
+            "type": "master-reform"
         }
     ],
     "apiCall": {

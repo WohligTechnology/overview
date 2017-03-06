@@ -11,11 +11,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     .controller('AccessController', function ($scope, TemplateService, NavigationService, $timeout, $state) {
-        if ($.jStorage.get("accessToken")) {
+        // if ($.jStorage.get("accessToken")) {
 
-        } else {
-            $state.go("login");
-        }
+        // } else {
+        //     $state.go("login");
+        // }
     })
 
     .controller('JagzCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state, $interval) {
@@ -1107,142 +1107,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
         //Used to name the .html file
-        $scope.template = TemplateService.changecontent("schema-creator");
-        $scope.menutitle = NavigationService.makeactive("Schema Creator");
+        $scope.template = TemplateService.changecontent("master-reform");
+        $scope.menutitle = NavigationService.makeactive("master-reform");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.collectionTypes = ["Table View", "Table View Drag and Drop", "Grid View", "Grid View Drag and Drop"];
-        $scope.schema = [{
-            "schemaType": "Boolean",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Color",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Date",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Email",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "File",
-            "Input1": "MB Limit",
-            "Input2": ""
-        }, {
-            "schemaType": "Image",
-            "Input1": "pixel x",
-            "Input2": "pixel y "
-        }, {
-            "schemaType": "Location",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Mobile",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Multiple Select",
-            "Input1": "Enum",
-            "Input2": ""
-        }, {
-            "schemaType": "Multiple Select From Table",
-            "Input1": "Collection",
-            "Input2": "Field"
-        }, {
-            "schemaType": "Number",
-            "Input1": "min ",
-            "Input2": "max"
-        }, {
-            "schemaType": "Single Select ",
-            "Input1": "Enum",
-            "Input2": ""
-        }, {
-            "schemaType": "Single Select From Table",
-            "Input1": "Collection",
-            "Input2": "Field"
-        }, {
-            "schemaType": "Telephone",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Text",
-            "Input1": "min length",
-            "Input2": "max length"
-        }, {
-            "schemaType": "TextArea",
-            "Input1": "min length",
-            "Input2": "max length"
-        }, {
-            "schemaType": "URL",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "WYSIWYG",
-            "Input1": "",
-            "Input2": ""
-        }, {
-            "schemaType": "Youtube",
-            "Input1": "",
-            "Input2": ""
-        }];
-
-
-        $scope.inputTypes = [{
-            value: '',
-            name: 'Select type of input'
-        }, {
-            value: 'Text',
-            name: 'Text'
-        }, {
-            value: 'Date',
-            name: 'Date'
-        }, {
-            value: 'Textarea',
-            name: 'Textarea'
-        }];
-
         $scope.formData = {};
-        $scope.formData.status = true;
-
-        $scope.formData.forms = [{
-            head: '',
-            items: [{}, {}]
-        }];
-
-        $scope.addHead = function () {
-            $scope.formData.forms.push({
-                head: $scope.formData.forms.length + 1,
-                items: [{}]
-            });
-        };
-        $scope.removeHead = function (index) {
-            if ($scope.formData.forms.length > 1) {
-                $scope.formData.forms.splice(index, 1);
-            } else {
-                $scope.formData.forms = [{
-                    head: '',
-                    items: [{}, {}]
-                }];
-            }
-        };
-
-        $scope.addItem = function (obj) {
-            var index = $scope.formData.forms.indexOf(obj);
-            $scope.formData.forms[index].items.push({});
-        };
-
-        $scope.removeItem = function (obj, indexItem) {
-            var indexHead = $scope.formData.forms.indexOf(obj);
-            if ($scope.formData.forms[indexHead].items.length > 1) {
-                $scope.formData.forms[indexHead].items.splice(indexItem, 1);
-            } else {
-                $scope.formData.forms[indexHead].items = [{}];
-            }
-        };
+        $scope.formData.questionAnswerList = [{}];
 
     })
 
