@@ -702,6 +702,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
     })
 
+    .controller('ReformListCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("reform-list"); //Use same name of .html file
+        $scope.menutitle = NavigationService.makeactive("Reform List"); //This is the Title of the Website
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
+
+    .controller('ReformNewCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("reform-new"); //Use same name of .html file
+        $scope.menutitle = NavigationService.makeactive("Reform New"); //This is the Title of the Website
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
+
 
     .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
 

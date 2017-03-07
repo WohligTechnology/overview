@@ -23,7 +23,21 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             url: "/state-info",
             templateUrl: "frontend/views/template.html",
             controller: 'StateInfoCtrl'
-        });
+        })
+
+        .state('reform-list', {
+            url: "/reform-list",
+            templateUrl: "frontend/views/template.html",
+            controller: 'ReformListCtrl'
+        })
+
+        .state('reform-new', {
+            url: "/reform-new",
+            templateUrl: "frontend/views/template.html",
+            controller: 'ReformNewCtrl'
+        })
+
+    ;
 
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
