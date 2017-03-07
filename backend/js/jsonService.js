@@ -105,11 +105,16 @@ jsonservicemod.service('JsonService', function ($http, TemplateService, $state, 
       }
       if (action && action.type == "page") {
         $state.go("page", sendTo);
-      }
-      else if (action && action.type == "master-reform") {
+      } else if (action && action.type == "master-reform") {
+        if (action.fieldsToSend) {
+          var keyword = {};
+          _.each(action.fieldsToSend, function (n, key) {
+            keyword[key] = value[n];
+          });
+          sendTo.keyword = JSON.stringify(keyword);
+        }
         $state.go("master-reform", sendTo);
-      }
-      else if (action && action.type == "apiCallConfirm") {
+      } else if (action && action.type == "apiCallConfirm") {
         globalfunction.confDel(function (value2) {
           if (value2) {
             NavigationService.delete(action.api, value, function (data) {

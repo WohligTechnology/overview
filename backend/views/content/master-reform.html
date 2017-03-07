@@ -11,7 +11,7 @@
     <div class="form-elements-sec">
         <div class="sec">
             <div class="clearfix"></div>
-            <button class="btn btn-primary pull-right" type="button" ng-click="addQuestion();">Add Questions</button>
+            <button class="btn btn-primary pull-right" type="button" ng-click="modalQuestion();">Add Questions</button>
             <h4>Category Name</h4>
             <hr>
             <div class="row">
@@ -37,7 +37,7 @@
                         <td>
                             <span ng-repeat="ans in item.answers">{{ans.answer}} ({{ans.points}}), </span>
                         </td>
-                        <td><button class="btn btn-primary" uib-tooltip="Edit" ng-click="addQuestion(item)"><i class="fa fa-pencil"></i></button></td>
+                        <td><button class="btn btn-primary" uib-tooltip="Edit" ng-click="modalQuestion(item)"><i class="fa fa-pencil"></i></button></td>
                     </tr>
                 </tbody>
             </table>
@@ -48,5 +48,7 @@
 <div class="clearfix"></div>
 <div class="text-center mt20 odd-even-button">
     <button class="btn btn-default" type="button" ng-click="saveMasterReform(formData)">Save</button>
+    <a class="btn btn-danger" href="#!/page/viewMasterReform//">Cancel</a>
+
 </div>
 </div>

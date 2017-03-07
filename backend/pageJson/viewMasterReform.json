@@ -18,7 +18,7 @@
             "type": "master-reform",
             "action": "editMasterReform",
             "fieldsToSend": {
-                "_id": "_id"
+                "id": "_id"
             }
         },
         {

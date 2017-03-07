@@ -1106,62 +1106,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-    .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
+
+    .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, JsonService, $timeout, $stateParams, $state, toastr, $uibModal) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("master-reform");
         $scope.menutitle = NavigationService.makeactive("master-reform");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        console.log("$stateParams---", $stateParams);
-        $scope.formData = {};
-        $scope.formData.questionAnswerList = [{}];
-        $scope.dataList = {
-            answers: [{}]
-        };
-        $scope.addAnswer = function () {
-            $scope.dataList.answers.push({});
-        };
-        $scope.addQuestion = function (dataList) {
-            $scope.formData.questionAnswerList.push(dataList);
+        console.log("$stateParams---", JSON.stringify($stateParams.keyword));
+        if (!_.isEmpty($stateParams.keyword)) {
+            $scope.json = JsonService;
+            JsonService.setKeyword($stateParams.keyword);
+            console.log("$scope.json.keyword._id", $scope.json.keyword.id);
+            NavigationService.getOneMasterReform($scope.json.keyword.id, function (data) {
+                $scope.formData = data.data;
+                console.log('formData-----', $scope.formData);
+            });
+        } else {
+            $scope.formData = {};
+            $scope.formData.questionAnswerList = [];
             $scope.dataList = {
                 answers: [{}]
             };
-        };
-        $scope.saveMasterReform = function (formData) {
-            console.log($scope.formData);
-            NavigationService.saveMasterReform($scope.formData, function (data) {
-                console.log("data---", data)
-                if (data.value === true) {
-                    $state.go('page', {
-                        "id": "viewMasterReform"
-                    });
-                    toastr.success("Master Reform  created successfully.", "Master Reform Created");
-                } else {
-                    toastr.error("Master Reform creation failed.", "Master Reform creation error");
-                }
-            });
-        };
+        }
 
-    })
-
-
-    .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr, $uibModal) {
-        //Used to name the .html file
-        $scope.template = TemplateService.changecontent("master-reform");
-        $scope.menutitle = NavigationService.makeactive("master-reform");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        console.log("$stateParams---", $stateParams);
-        $scope.formData = {};
-        $scope.formData.questionAnswerList = [{}];
-        $scope.dataList = {
-            answers: [{}]
-        };
         $scope.addAnswer = function () {
             $scope.dataList.answers.push({});
         };
         $scope.addQuestion = function (dataList) {
-            $scope.formData.questionAnswerList.push(dataList);
+            if ($scope.Questionindex != null || $scope.Questionindex != 'undefined') {
+                $scope.formData.questionAnswerList[$scope.Questionindex] = dataList;
+            } else {
+                $scope.formData.questionAnswerList.push(dataList);
+            }
             $scope.dataList = {
                 answers: [{}]
             };
@@ -1181,7 +1158,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
 
-        $scope.addQuestion = function (data) {
+        $scope.modalQuestion = function (data) {
+            $scope.Questionindex = $scope.formData.questionAnswerList.indexOf(data);
+            console.log("$scope.Questionindex--", $scope.Questionindex)
             if (data) {
                 $scope.dataList = data;
             }
@@ -1192,6 +1171,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 scope: $scope
             });
         };
+        $scope.deleteAnswer = function (indexItem) {
+            $scope.dataList.answers.splice(indexItem, 1);
+        };
+
 
     })
 

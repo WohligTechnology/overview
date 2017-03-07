@@ -9,7 +9,7 @@ var schema = new Schema({
         points: String,
         answers: [{
             answer: String,
-            point: String
+            points: String
         }]
     }]
 });

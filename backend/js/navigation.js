@@ -21,7 +21,7 @@ var navigationservice = angular.module('navigationservice', [])
             {
                 name: "MasterReform",
                 classis: "active",
-                sref: "#!/master-reform-list",
+                sref: "#!/page/viewMasterReform//",
                 icon: "phone"
             }
         ];
@@ -115,6 +115,16 @@ var navigationservice = angular.module('navigationservice', [])
 
                 });
             },
+            getOneMasterReform: function (id, callback) {
+                $http.post(adminurl + 'MasterReform/getOne', {
+                    _id: id
+                }).then(function (data) {
+                    data = data.data;
+                    callback(data);
+
+                });
+            },
+
             getLatLng: function (address, i, callback) {
                 $http({
                     url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyC62zlixVsjaq4zDaL4cefNCubjCgxkte4",
