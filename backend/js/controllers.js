@@ -1130,7 +1130,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.saveMasterReform = function (formData) {
             console.log($scope.formData);
             NavigationService.saveMasterReform($scope.formData, function (data) {
-                console.log("data---", data);
+                console.log("data---", data)
                 if (data.value === true) {
                     $state.go('page', {
                         "id": "viewMasterReform"
@@ -1139,16 +1139,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     toastr.error("Master Reform creation failed.", "Master Reform creation error");
                 }
-            });
-        };
-
-        $scope.addQuestion = function (data) {
-            $scope.dataList = data;
-            var modalInstance = $uibModal.open({
-                animation: $scope.animationsEnabled,
-                templateUrl: '/backend/views/modal/add-question.html',
-                size: 'lg',
-                scope: $scope
             });
         };
 
