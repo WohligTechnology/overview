@@ -1108,7 +1108,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
         //Used to name the .html file
-        $scope.template = TemplateService.changecontent("master-reform-list");
+        $scope.template = TemplateService.changecontent("master-reform");
         $scope.menutitle = NavigationService.makeactive("master-reform");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
@@ -1130,7 +1130,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.saveMasterReform = function (formData) {
             console.log($scope.formData);
             NavigationService.saveMasterReform($scope.formData, function (data) {
-                console.log("data---", data)
+                console.log("data---", data);
                 if (data.value === true) {
                     $state.go('page', {
                         "id": "viewMasterReform"
@@ -1139,6 +1139,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     toastr.error("Master Reform creation failed.", "Master Reform creation error");
                 }
+            });
+        };
+
+        $scope.addQuestion = function (data) {
+            $scope.dataList = data;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: '/backend/views/modal/add-question.html',
+                size: 'lg',
+                scope: $scope
             });
         };
 

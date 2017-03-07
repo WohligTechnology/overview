@@ -11,56 +11,17 @@
     <div class="form-elements-sec">
         <div class="sec">
             <div class="clearfix"></div>
+            <button class="btn btn-primary pull-right" type="button" ng-click="addQuestion();">Add Questions</button>
             <h4>Category Name</h4>
             <hr>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Category</label>
-                        <input type="text" ng-model="formData.category" class="form-control">
+                        <input type="text" name="category" ng-model="formData.category" class="form-control" required>
                     </div>
                 </div>
             </div>
-            <h4>Questions &amp; Answers</h4>
-            <hr>
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="form-group">
-                        <label>Question</label>
-                        <input type="text" ng-model="dataList.question" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label>Points</label>
-                        <input type="number" ng-model="dataList.points" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary pull-right" type="button" ng-click="addAnswer();">Add Answer</button>
-            <h5>Add Answer</h5>
-            <hr>
-            <div class="row" ng-repeat="ans in dataList.answers">
-                <!--<div class="" ng-repeat="item in formData.questionAnswerList">-->
-                <div class="col-md-8">
-                    <div class="form-group">
-                        <label>Answer</label>
-                        <input type="text" ng-model="ans.answer" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label>Weightage</label>
-                        <input type="number" max="{{dataList.points}}" ng-model="ans.points" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <label>Action</label> <br>
-                    <button class="btn btn-danger">Delete Answer</button>
-                </div>
-                <!--</div>-->
-            </div>
-            <button class="btn btn-primary" type="button" ng-click="addQuestion(dataList);">Save Question</button>
 
             <table class="table table-responsive" ng-if="formData.questionAnswerList">
                 <thead>
@@ -76,7 +37,7 @@
                         <td>
                             <span ng-repeat="ans in item.answers">{{ans.answer}} ({{ans.points}}), </span>
                         </td>
-                        <td><button class="btn btn-primary" uib-tooltip="Edit"><i class="fa fa-pencil"></i></button></td>
+                        <td><button class="btn btn-primary" uib-tooltip="Edit" ng-click="addQuestion(item)"><i class="fa fa-pencil"></i></button></td>
                     </tr>
                 </tbody>
             </table>
