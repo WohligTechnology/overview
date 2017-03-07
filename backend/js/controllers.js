@@ -1120,7 +1120,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("$scope.json.keyword._id", $scope.json.keyword.id);
             NavigationService.getOneMasterReform($scope.json.keyword.id, function (data) {
                 $scope.formData = data.data;
+                if (_.isEmpty($scope.formData.questionAnswerList)) {
+                    $scope.formData.questionAnswerList = [];
+                    $scope.dataList = {
+                        answers: [{}]
+                    };
+                } else {
+                    $scope.dataList = $scope.formData.questionAnswerList;
+                }
                 console.log('formData-----', $scope.formData);
+
             });
         } else {
             $scope.formData = {};
@@ -1134,8 +1143,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.dataList.answers.push({});
         };
         $scope.addQuestion = function (dataList) {
-            if ($scope.Questionindex != null || $scope.Questionindex != 'undefined') {
-                $scope.formData.questionAnswerList[$scope.Questionindex] = dataList;
+            if ($scope.Questionindex) {
+                if ($scope.Questionindex != null || $scope.Questionindex != 'undefined') {
+                    $scope.formData.questionAnswerList[$scope.Questionindex] = dataList;
+                }
             } else {
                 $scope.formData.questionAnswerList.push(dataList);
             }
@@ -1159,8 +1170,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         $scope.modalQuestion = function (data) {
-            $scope.Questionindex = $scope.formData.questionAnswerList.indexOf(data);
-            console.log("$scope.Questionindex--", $scope.Questionindex)
+            if (data != null) {
+                if (!_.isEmpty($scope.formData.questionAnswerList)) {
+                    $scope.Questionindex = $scope.formData.questionAnswerList.indexOf(data);
+                    console.log("$scope.Questionindex--", $scope.Questionindex)
+                }
+            }
             if (data) {
                 $scope.dataList = data;
             }

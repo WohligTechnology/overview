@@ -1,6 +1,6 @@
 {
-    "title": "Master Reform",
-    "description": "List of Master Reforms",
+    "title": "Answered Refor​m",
+    "description": "List of Answered Refor​ms",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": [
@@ -16,7 +16,7 @@
             "icon": "fa-pencil",
             "buttonClass": "btn-primary",
             "type": "master-reform",
-            "action": "editMasterReform",
+            "action": "editAnsweredRefor​m",
             "fieldsToSend": {
                 "id": "_id"
             }
@@ -26,23 +26,18 @@
             "icon": "fa-trash",
             "buttonClass": "btn-danger",
             "type": "apiCallConfirm",
-            "title": "Delete MasterReform",
-            "content": "Are you sure you want to delete MasterReform?",
-            "api": "MasterReform/delete",
+            "title": "Delete AnsweredRefor​m",
+            "content": "Are you sure you want to delete AnsweredRefor​m?",
+            "api": "AnsweredRefor​m/delete",
             "fieldsToSend": {
                 "name": "_id",
                 "value": "_id"
             }
         }
     ],
-    "button": [{
-        "name": "Create",
-        "icon": "plus",
-        "class": "btn-success",
-        "type": "master-reform"
-    }],
+    "button": [],
     "apiCall": {
-        "url": "MasterReform/search",
+        "url": "AnsweredRefor​m/search",
         "params": "_id"
     }
 }

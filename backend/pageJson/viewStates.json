@@ -11,11 +11,10 @@
             "isSort": "",
             "tableRef": "name"
         },
-
         {
             "name": "User",
             "isSort": "",
-            "tableRef": "user"
+            "tableRef": "userId"
         }
     ],
     "action": [{
@@ -43,29 +42,12 @@
         }
     ],
     "button": [{
-            "name": "Excel Export",
-            "icon": "print",
-            "class": "btn-danger",
-            "type": "redirect",
-            "action": "States/generateExcel",
-            "linkType": "admin"
-        },
-        {
-            "name": "Upload Excel",
-            "icon": "delete",
-            "class": "btn-warning",
-            "type": "redirect",
-            "action": "excel-upload/States",
-            "linkType": "internal"
-        },
-        {
-            "name": "Create",
-            "icon": "plus",
-            "class": "btn-success",
-            "type": "page",
-            "action": "createStates"
-        }
-    ],
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createStates"
+    }],
     "apiCall": {
         "url": "States/search",
         "params": "_id"
