@@ -15,7 +15,7 @@
             "name": "edit",
             "icon": "fa-pencil",
             "buttonClass": "btn-primary",
-            "type": "page",
+            "type": "master-reform",
             "action": "editMasterReform",
             "fieldsToSend": {
                 "_id": "_id"

@@ -7,13 +7,25 @@
     "urlFields": [
         "_id"
     ],
-    "fields": [
-        {
+    "fields": [{
             "name": "Name",
             "type": "text",
             "tableRef": "name",
             "placeholder": "Enter Name",
             "id": "name",
+            "validation": [
+                "required",
+                "trim",
+                "unique"
+            ],
+            "url": ""
+        },
+        {
+            "name": "User Id",
+            "type": "text",
+            "tableRef": "userId",
+            "placeholder": "Enter User",
+            "id": "userId",
             "validation": [
                 "required",
                 "trim",
@@ -28,19 +40,9 @@
             "placeholder": "Enter Password",
             "id": "password",
             "url": ""
-        },
-        {
-            "name": "User",
-            "type": "selectFromTable",
-            "tableRef": "user",
-            "searchApi": "searchCall",
-            "placeholder": "Enter User",
-            "id": "user",
-            "url": "User/search"
         }
     ],
-    "action": [
-        {
+    "action": [{
             "name": "submit",
             "action": "submitStates",
             "stateName": {

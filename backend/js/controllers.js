@@ -1108,10 +1108,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
         //Used to name the .html file
-        $scope.template = TemplateService.changecontent("master-reform");
-        $scope.menutitle = NavigationService.makeactive("MasterReform");
+        $scope.template = TemplateService.changecontent("master-reform-list");
+        $scope.menutitle = NavigationService.makeactive("master-reform");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        console.log("$stateParams---", $stateParams);
         $scope.formData = {};
         $scope.formData.questionAnswerList = [{}];
         $scope.dataList = {
@@ -1142,6 +1143,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
     })
+
+    .controller('masterReformListCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("master-reform-list");
+        $scope.menutitle = NavigationService.makeactive("master-reform-list");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        console.log("$stateParams---", $stateParams);
+        $scope.formData = {};
+        $scope.formData.questionAnswerList = [{}];
+        $scope.dataList = {
+            answers: [{}]
+        };
+        $scope.addAnswer = function () {
+            $scope.dataList.answers.push({});
+        };
+        $scope.addQuestion = function (dataList) {
+            $scope.formData.questionAnswerList.push(dataList);
+            $scope.dataList = {
+                answers: [{}]
+            };
+        };
+        $scope.saveMasterReform = function (formData) {
+            console.log($scope.formData);
+            NavigationService.saveMasterReform($scope.formData, function (data) {
+                console.log("data---", data)
+                if (data.value === true) {
+                    $state.go('page', {
+                        "id": "viewMasterReform"
+                    });
+                    toastr.success("Master Reform  created successfully.", "Master Reform Created");
+                } else {
+                    toastr.error("Master Reform creation failed.", "Master Reform creation error");
+                }
+            });
+        };
+
+    })
+
 
     .controller('ExcelUploadCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
         //Used to name the .html file

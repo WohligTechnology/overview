@@ -21,7 +21,7 @@ var navigationservice = angular.module('navigationservice', [])
             {
                 name: "MasterReform",
                 classis: "active",
-                sref: "#!/page/viewMasterReform//",
+                sref: "#!/master-reform-list",
                 icon: "phone"
             }
         ];

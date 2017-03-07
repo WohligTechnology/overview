@@ -81,6 +81,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/jagz.html",
             controller: 'JagzCtrl'
         })
+        .state('master-reform-list', {
+            url: "/master-reform-list",
+            templateUrl: "views/template.html",
+            controller: 'masterReformListCtrl'
+        })
         .state('master-reform', {
             url: "/master-reform",
             templateUrl: "views/template.html",
@@ -158,8 +163,7 @@ firstapp.directive('uploadImage', function ($http, $filter, $timeout) {
         },
         link: function ($scope, element, attrs) {
             console.log($scope.model);
-            $scope.showImage = function () {
-            };
+            $scope.showImage = function () {};
             $scope.check = true;
             if (!$scope.type) {
                 $scope.type = "image";

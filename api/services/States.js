@@ -8,11 +8,9 @@ var schema = new Schema({
         type: String,
         default: ""
     },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
-        index: true
+    userId: {
+        type: String,
+        required: true
     }
 });
 
