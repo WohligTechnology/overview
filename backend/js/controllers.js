@@ -1182,7 +1182,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         $scope.addQuestion = function (data) {
-            $scope.dataList = data;
+            if (data) {
+                $scope.dataList = data;
+            }
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: '/backend/views/modal/add-question.html',
