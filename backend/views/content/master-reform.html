@@ -1,4 +1,4 @@
-<form name="formName" ng-submit="saveModel(formData)">
+<form name="formName" ng-submit="saveMasterReform(formData)">
     <div class="heading-sec">
         <div class="row">
             <div class="col-md-12 column">
@@ -21,39 +21,63 @@
                         </div>
                     </div>
                 </div>
-                <div ng-repeat="item in formData.questionAnswerList">
-                    <div class="row">
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Question</label>
-                                <input type="text" ng-model="item.question" class="form-control">
-                            </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Question</label>
+                            <input type="text" ng-model="dataList.question" class="form-control">
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Points</label>
-                                <input type="text" ng-model="item.points" class="form-control">
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="row">
-                        <!--<div class="" ng-repeat="item in formData.questionAnswerList">-->
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Answer</label>
-                                <input type="text" ng-model="item.question" class="form-control">
-                            </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Points</label>
+                            <input type="text" ng-model="dataList.points" class="form-control">
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Points</label>
-                                <input type="text" ng-model="item.points" class="form-control">
-                            </div>
-                        </div>
-                        <!--</div>-->
                     </div>
+                    <label>Add Answer</label>
+                    <button class="btn btn-primary" type="button" ng-click="addAnswer();"><i class="fa fa-plus"></i></button>
+
+                </div>
+                <div class="row" ng-repeat="ans in dataList.answers">
+                    <!--<div class="" ng-repeat="item in formData.questionAnswerList">-->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Answer</label>
+                            <input type="text" ng-model="ans.answer" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Points</label>
+                            <input type="text" ng-model="ans.points" class="form-control">
+                        </div>
+                    </div>
+
+                    <!--</div>-->
+                </div>
+                <button class="btn btn-primary" type="button" ng-click="addQuestion(dataList);">submit Question</button>
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Points</th>
+                                <th>Answer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in formData.questionAnswerList">
+                                <td>{{item.question}}</td>
+                                <td>{{item.points}}</td>
+                                <td>
+                                    <ul ng-repeat="ans in item.answers">
+                                        <li>{{ans.answer}}</li>
+                                        <li>{{ans.points}}</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

@@ -7,23 +7,23 @@ var navigationservice = angular.module('navigationservice', [])
 
     .factory('NavigationService', function ($http) {
         var navigation = [{
-            name: "Users",
-            classis: "active",
-            sref: "#!/page/viewUser//",
-            icon: "phone"
-        },
-        {
-            name: "States",
-            classis: "active",
-            sref: "#!/page/viewStates//",
-            icon: "phone"
-        },
-        {
-            name: "MasterReform",
-            classis: "active",
-            sref: "#!/page/viewMasterReform//",
-            icon: "phone"
-        }
+                name: "Users",
+                classis: "active",
+                sref: "#!/page/viewUser//",
+                icon: "phone"
+            },
+            {
+                name: "States",
+                classis: "active",
+                sref: "#!/page/viewStates//",
+                icon: "phone"
+            },
+            {
+                name: "MasterReform",
+                classis: "active",
+                sref: "#!/page/viewMasterReform//",
+                icon: "phone"
+            }
         ];
 
         return {
@@ -85,6 +85,13 @@ var navigationservice = angular.module('navigationservice', [])
                 });
             },
 
+            saveMasterReform: function (formData, callback) {
+                $http.post(adminurl + 'MasterReform/save', formData).then(function (data) {
+                    data = data.data;
+                    callback(data);
+
+                });
+            },
             apiCall: function (url, formData, callback) {
                 $http.post(adminurl + url, formData).then(function (data) {
                     data = data.data;

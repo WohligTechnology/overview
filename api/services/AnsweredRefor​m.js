@@ -11,7 +11,16 @@ var schema = new Schema({
         ref: 'States',
         required: true,
         index: true
-    }
+    },
+    answerList: [{
+        category: String,
+        question: String,
+        points: String,
+        answers: [{
+            answer: String,
+            point: String
+        }]
+    }]
 
 });
 

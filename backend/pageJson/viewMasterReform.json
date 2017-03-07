@@ -6,15 +6,12 @@
     "urlFields": [
         "_id"
     ],
-    "fields": [
-        {
-            "name": "category",
-            "isSort": "",
-            "tableRef": "category"
-        }
-    ],
-    "action": [
-        {
+    "fields": [{
+        "name": "category",
+        "isSort": "",
+        "tableRef": "category"
+    }],
+    "action": [{
             "name": "edit",
             "icon": "fa-pencil",
             "buttonClass": "btn-primary",
@@ -38,8 +35,7 @@
             }
         }
     ],
-    "button": [
-        {
+    "button": [{
             "name": "Excel Export",
             "icon": "print",
             "class": "btn-danger",

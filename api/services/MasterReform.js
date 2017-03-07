@@ -7,15 +7,10 @@ var schema = new Schema({
     questionAnswerList: [{
         question: String,
         points: String,
-        answers: [
-            {
-                answer: String,
-                point: String
-            }, {
-                answer: String,
-                point: String
-            }
-        ]
+        answers: [{
+            answer: String,
+            point: String
+        }]
     }]
 });
 

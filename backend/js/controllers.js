@@ -239,7 +239,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Country List");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        JsonService.getJson($stateParams.id, function () { });
+        JsonService.getJson($stateParams.id, function () {});
 
         globalfunction.confDel = function (callback) {
             var modalInstance = $uibModal.open({
@@ -317,9 +317,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.currentPage = 1;
             }
             NavigationService.search($scope.json.json.apiCall.url, {
-                page: $scope.currentPage,
-                keyword: $scope.search.keyword
-            }, ++i,
+                    page: $scope.currentPage,
+                    keyword: $scope.search.keyword
+                }, ++i,
                 function (data, ini) {
                     if (ini == i) {
                         $scope.items = data.data.results;
@@ -493,6 +493,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.editBox = function (state, data) {
             $scope.state = state;
             $scope.data = data;
+            page
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: '/backend/views/modal/modal.html',
@@ -1108,11 +1109,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('masterReformCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("master-reform");
-        $scope.menutitle = NavigationService.makeactive("master-reform");
+        $scope.menutitle = NavigationService.makeactive("MasterReform");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.formData = {};
         $scope.formData.questionAnswerList = [{}];
+        $scope.dataList = {
+            answers: [{}]
+        };
+        $scope.addAnswer = function () {
+            $scope.dataList.answers.push({});
+        };
+        $scope.addQuestion = function (dataList) {
+            $scope.formData.questionAnswerList.push(dataList);
+            $scope.dataList = {
+                answers: [{}]
+            };
+        };
+        $scope.saveMasterReform = function (formData) {
+            console.log($scope.formData);
+            NavigationService.saveMasterReform($scope.formData, function (data) {
+                console.log("data---", data)
+                if (data.value === true) {
+                    $state.go('page', {
+                        "id": "viewMasterReform"
+                    });
+                    toastr.success("Master Reform  created successfully.", "Master Reform Created");
+                } else {
+                    toastr.error("Master Reform creation failed.", "Master Reform creation error");
+                }
+            });
+        };
 
     })
 
