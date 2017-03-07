@@ -1,90 +1,91 @@
-<form name="formName" ng-submit="saveMasterReform(formData)">
-    <div class="heading-sec">
-        <div class="row">
-            <div class="col-md-12 column">
-                <div class="heading-profile">
-                    <h2>Create Master Reform</h2>
-                </div>
+<div class="heading-sec">
+    <div class="row">
+        <div class="col-md-12 column">
+            <div class="heading-profile">
+                <h2>Create Master Reform</h2>
             </div>
         </div>
     </div>
-    <div class="widget">
-        <div class="form-elements-sec">
-            <div class="sec">
-                <div class="clearfix"></div>
-                <div class="row">
-
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Category</label>
-                            <input type="text" ng-model="formData.category" class="form-control">
-                        </div>
+</div>
+<div class="widget">
+    <div class="form-elements-sec">
+        <div class="sec">
+            <div class="clearfix"></div>
+            <h4>Category Name</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" ng-model="formData.category" class="form-control">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Question</label>
-                            <input type="text" ng-model="dataList.question" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Points</label>
-                            <input type="text" ng-model="dataList.points" class="form-control">
-                        </div>
-                    </div>
-                    <label>Add Answer</label>
-                    <button class="btn btn-primary" type="button" ng-click="addAnswer();"><i class="fa fa-plus"></i></button>
-
-                </div>
-                <div class="row" ng-repeat="ans in dataList.answers">
-                    <!--<div class="" ng-repeat="item in formData.questionAnswerList">-->
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Answer</label>
-                            <input type="text" ng-model="ans.answer" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Points</label>
-                            <input type="text" ng-model="ans.points" class="form-control">
-                        </div>
-                    </div>
-
-                    <!--</div>-->
-                </div>
-                <button class="btn btn-primary" type="button" ng-click="addQuestion(dataList);">submit Question</button>
-                <div class="row">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Question</th>
-                                <th>Points</th>
-                                <th>Answer</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="item in formData.questionAnswerList">
-                                <td>{{item.question}}</td>
-                                <td>{{item.points}}</td>
-                                <td>
-                                    <ul ng-repeat="ans in item.answers">
-                                        <li>{{ans.answer}}</li>
-                                        <li>{{ans.points}}</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
+            <h4>Questions &amp; Answers</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>Question</label>
+                        <input type="text" ng-model="dataList.question" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Points</label>
+                        <input type="number" ng-model="dataList.points" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary pull-right" type="button" ng-click="addAnswer();">Add Answer</button>
+            <h5>Add Answer</h5>
+            <hr>
+            <div class="row" ng-repeat="ans in dataList.answers">
+                <!--<div class="" ng-repeat="item in formData.questionAnswerList">-->
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Answer</label>
+                        <input type="text" ng-model="ans.answer" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Weightage</label>
+                        <input type="number" max="{{dataList.points}}" ng-model="ans.points" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Action</label> <br>
+                    <button class="btn btn-danger">Delete Answer</button>
+                </div>
+                <!--</div>-->
+            </div>
+            <button class="btn btn-primary" type="button" ng-click="addQuestion(dataList);">Save Question</button>
+
+            <table class="table table-responsive" ng-if="formData.questionAnswerList">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in formData.questionAnswerList">
+                        <td>{{item.question}} ({{item.points}})</td>
+                        <td>
+                            <span ng-repeat="ans in item.answers">{{ans.answer}} ({{ans.points}}), </span>
+                        </td>
+                        <td><button class="btn btn-primary" uib-tooltip="Edit"><i class="fa fa-pencil"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     </div>
-    <div class="clearfix"></div>
-    <div class="text-center mt20 odd-even-button">
-        <button class="btn btn-default" type="submit" ng-disabled="formName.$invalid">Save</button>
-    </div>
-    </div>
-</form>
+</div>
+<div class="clearfix"></div>
+<div class="text-center mt20 odd-even-button">
+    <button class="btn btn-default" type="button" ng-click="saveMasterReform(formData)">Save</button>
+</div>
+</div>
