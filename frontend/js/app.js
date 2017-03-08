@@ -19,6 +19,13 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             controller: 'HomeCtrl'
         })
 
+        .state('login', {
+            url: "/login",
+            templateUrl: "frontend/views/template.html",
+            controller: 'LoginCtrl'
+        })
+
+
         .state('state-info', {
             url: "/state-info",
             templateUrl: "frontend/views/template.html",
@@ -39,7 +46,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
 
     ;
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/login");
     $locationProvider.html5Mode(isproduction);
 });
 
