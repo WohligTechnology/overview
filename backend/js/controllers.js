@@ -1113,6 +1113,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("master-reform");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.Questionindex = null;
+        $scope.dataList = {
+            answers: [{}]
+        };
         console.log("$stateParams---", JSON.stringify($stateParams.keyword));
         if (!_.isEmpty($stateParams.keyword)) {
             $scope.json = JsonService;
@@ -1122,9 +1126,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.formData = data.data;
                 if (_.isEmpty($scope.formData.questionAnswerList)) {
                     $scope.formData.questionAnswerList = [];
-                    $scope.dataList = {
-                        answers: [{}]
-                    };
+
                 } else {
                     $scope.dataList = $scope.formData.questionAnswerList;
                 }
@@ -1134,19 +1136,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         } else {
             $scope.formData = {};
             $scope.formData.questionAnswerList = [];
-            $scope.dataList = {
-                answers: [{}]
-            };
         }
 
         $scope.addAnswer = function () {
             $scope.dataList.answers.push({});
         };
         $scope.addQuestion = function (dataList) {
-            if ($scope.Questionindex) {
-                if ($scope.Questionindex != null || $scope.Questionindex != 'undefined') {
-                    $scope.formData.questionAnswerList[$scope.Questionindex] = dataList;
-                }
+            if ($scope.Questionindex != null) {
+                $scope.formData.questionAnswerList[$scope.Questionindex] = dataList;
             } else {
                 $scope.formData.questionAnswerList.push(dataList);
             }
@@ -1175,10 +1172,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.Questionindex = $scope.formData.questionAnswerList.indexOf(data);
                     console.log("$scope.Questionindex--", $scope.Questionindex)
                 }
-            }
-            if (data) {
                 $scope.dataList = data;
+            } else {
+                $scope.dataList = {
+                    answers: [{}]
+                };
             }
+
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: '/backend/views/modal/add-question.html',
