@@ -11,7 +11,7 @@ module.exports = [
   'bower_components/highcharts/modules/map.js',
   'bower_components/highcharts/modules/data.js',
   'frontend/js/in-all-disputed.js',
-
+  'bower_components/jStorage/jstorage.min.js',
   //Angular Libs
   'bower_components/angular/angular.js',
   'bower_components/angular-sanitize/angular-sanitize.js',
@@ -26,7 +26,8 @@ module.exports = [
   'bower_components/angulartics-google-analytics/dist/angulartics-ga.min.js',
   'bower_components/angular-ui-swiper/dist/angular-ui-swiper.js',
   'bower_components/highcharts-ng/dist/highcharts-ng.js',
-
+  'bower_components/angular-toastr/dist/angular-toastr.js',
+  'bower_components/angular-toastr/dist/angular-toastr.tpls.js',
   //Work files
   'frontend/js/app.js',
   'frontend/js/language.js',

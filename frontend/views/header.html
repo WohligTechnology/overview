@@ -5,7 +5,7 @@
     </div>
     <div class="quick-links">
         <ul>
-            <li class="user-name">Welcome, <span>Srikant Deshmukh</span></li>
+            <li class="user-name">Welcome, <span>{{profile.userId}}</span></li>
             <li>
                 <a title="Logout" class="show-stats red-skin" tooltip-placement="bottom" uib-tooltip="Logout"><i class="fa fa-power-off"></i></a>
             </li>
@@ -17,9 +17,9 @@
 <header class="side-header light-skin opened-menu">
     <div class="admin-details">
         <span>
-        <img ng-src="frontend/img/img-placeholder.png" alt="{{profile.name}} {{profile.surname}}" />
+        <img ng-src="frontend/img/img-placeholder.png" alt="{{profile.userId}}" />
     </span>
-        <h3>Srikant Deshmukh</h3>
+        <h3>{{profile.userId}}</h3>
     </div>
     <div class="menu-scroll">
         <div class="side-menus">

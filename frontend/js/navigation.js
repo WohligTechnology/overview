@@ -1,6 +1,6 @@
 var navigationservice = angular.module('navigationservice', [])
 
-    .factory('NavigationService', function () {
+    .factory('NavigationService', function ($http) {
         var navigation = [
             //     {
             //     name: "Overview",
@@ -34,6 +34,14 @@ var navigationservice = angular.module('navigationservice', [])
                     }
                 }
                 return menuname;
+            },
+            login: function (formData, callback) {
+                console.log("m in NavigationService", formData)
+                $http({
+                    url: adminurl + 'States/doLogin',
+                    method: 'POST',
+                    data: formData
+                }).then(callback);
             },
         };
     });

@@ -1,16 +1,43 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ui.swiper', 'highcharts-ng'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'toastr', 'ui.swiper', 'highcharts-ng'])
     .controller('headerctrl', function ($scope, TemplateService, $state) {
         $scope.template = TemplateService;
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
+
+        if ($.jStorage.get('state')) {
+            $scope.profile = $.jStorage.get('state');
+            console.log(" $scope.profile---", $scope.profile)
+        }
     })
 
-    .controller('LoginCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    .controller('LoginCtrl', function ($scope, TemplateService, $state, NavigationService, $timeout, toastr) {
         $scope.template = TemplateService.changecontent("login"); //Use same name of .html file
         $scope.menutitle = NavigationService.makeactive("Login"); //This is the Title of the Website
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        $scope.variables = {};
+        $scope.variables.letIn = true;
+        $scope.doLogin = function (formData) {
+            console.log("m in doLogin", formData)
+            if ($scope.variables.letIn) {
+                $scope.variables.letIn = false;
+                NavigationService.login(formData, function (data) {
+                    console.log("data found is", data.data)
+                    $scope.variables.letIn = true;
+                    if (data.data.value === true) {
+                        $.jStorage.set('state', data.data.data);
+                        toastr.success('You have been successfully logged in');
+                        $state.go('home');
+                    } else if (data.data.value === false) {
+                        toastr.warning(data.data.message, 'Login Failure');
+                    } else {
+                        toastr.warning('Something went wrong', 'Please try again');
+                    }
+                });
+            }
+        };
     })
 
     .controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
